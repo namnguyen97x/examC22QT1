@@ -246,35 +246,22 @@ class QuizApp {
     async showScore() {
         this.quizContainer.style.display = 'none';
         this.scoreContainer.style.display = 'block';
-        
         document.getElementById('score').textContent = this.score;
         document.getElementById('total').textContent = this.totalQuestions;
-        
         const percentage = Math.round((this.score / this.totalQuestions) * 100);
         document.getElementById('percentage').textContent = `${percentage}%`;
-        
-        // Update score color based on performance
         const scoreDisplay = document.querySelector('.score-display');
         let color, icon, title;
-        
         if (percentage >= 80) {
-            color = '#4caf50';
-            icon = 'success';
-            title = '🎉 Xuất sắc!';
+            color = '#4caf50'; icon = 'success'; title = '🎉 Xuất sắc!';
         } else if (percentage >= 60) {
-            color = '#ff9800';
-            icon = 'info';
-            title = '👍 Khá tốt!';
+            color = '#ff9800'; icon = 'info'; title = '👍 Khá tốt!';
         } else {
-            color = '#f44336';
-            icon = 'warning';
-            title = '💪 Cần cố gắng thêm!';
+            color = '#f44336'; icon = 'warning'; title = '💪 Cần cố gắng thêm!';
         }
-        
         scoreDisplay.style.color = color;
-
         // Show result notification
-        await Swal.fire({
+        const result = await Swal.fire({
             title: title,
             html: `
                 <div style="font-size: 18px;">
@@ -286,12 +273,16 @@ class QuizApp {
                 </div>
             `,
             icon: icon,
-            confirmButtonText: 'Tiếp tục',
-            confirmButtonColor: color
+            confirmButtonText: '📋 Xem chi tiết kết quả',
+            confirmButtonColor: color,
+            allowOutsideClick: false,
+            allowEscapeKey: false
         });
-
-        // Show custom celebration alert after completing all questions
-        await this.showCelebrationAlert(percentage);
+        if (result.isConfirmed) {
+            this.showReview();
+        }
+        // Show custom celebration alert sau khi xem chi tiết (nếu muốn giữ)
+        // await this.showCelebrationAlert(percentage);
     }
 
     async showCelebrationAlert(percentage) {
@@ -609,6 +600,19 @@ document.addEventListener('DOMContentLoaded', () => {
             if (result.isConfirmed) {
                 window.quizAppInstance.finishQuiz();
             }
+        }
+    });
+
+    const reviewBtn = document.getElementById('review-btn');
+    const reviewRestartBtn = document.getElementById('review-restart-btn');
+    reviewBtn.addEventListener('click', () => {
+        if (window.quizAppInstance) {
+            window.quizAppInstance.showReview();
+        }
+    });
+    reviewRestartBtn.addEventListener('click', async () => {
+        if (window.quizAppInstance) {
+            await window.quizAppInstance.restart();
         }
     });
 });

@@ -755,4 +755,25 @@ header h1 {
         padding: 6px 10px;
         font-size: 0.95em;
     }
+}
+
+.review-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+    .review-actions {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    .review-actions .nav-btn, .review-actions .restart-btn {
+        width: 100%;
+        font-size: 1.08em;
+        padding: 16px 0;
+        border-radius: 22px;
+    }
 } 
