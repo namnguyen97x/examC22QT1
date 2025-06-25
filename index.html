@@ -29,8 +29,11 @@
         </div>
 
         <!-- Quiz App (ẩn mặc định) -->
-        <header style="display:none">
+        <header style="display:none; position:relative;">
             <h1>🌐 Trắc nghiệm Mạng Máy Tính</h1>
+            <button id="finish-btn" class="finish-btn" style="position:absolute; top:18px; right:24px; display:flex; align-items:center; gap:6px; font-size:1em;">
+                <span>🛑</span> Kết thúc
+            </button>
             <div class="progress-bar">
                 <div class="progress" id="progress"></div>
             </div>

@@ -1,12 +1,23 @@
+// Fisher-Yates shuffle
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 class QuizApp {
     constructor() {
+        // Shuffle questions for each new session
+        this.questions = shuffleArray([...questions]);
         this.currentQuestion = 0;
         this.score = 0;
         this.userAnswers = [];
         this.quizContainer = document.querySelector('.quiz-container');
         this.scoreContainer = document.getElementById('score-container');
         this.reviewContainer = document.getElementById('review-container');
-        this.totalQuestions = questions.length;
+        this.totalQuestions = this.questions.length;
         
         this.init();
         this.showWelcomeMessage();
@@ -53,7 +64,7 @@ class QuizApp {
     }
 
     renderQuestion() {
-        const question = questions[this.currentQuestion];
+        const question = this.questions[this.currentQuestion];
         if (!question) {
             console.error('Question not found:', this.currentQuestion);
             return;
@@ -62,7 +73,7 @@ class QuizApp {
         console.log('Current question:', question); // Debug log
 
         document.getElementById('question-text').innerHTML = 
-            `<span style="color: #666; font-size: 0.9em;">Câu ${question.numb}:</span><br>${question.question}`;
+            `<span style="color: #666; font-size: 0.9em;">Câu ${this.currentQuestion + 1}:</span><br>${question.question}`;
         
         const answersContainer = document.getElementById('answers-container');
         answersContainer.innerHTML = '';
@@ -98,34 +109,17 @@ class QuizApp {
     }
 
     async selectAnswer(answer) {
-        // Remove previous selection with animation
+        // Remove previous selection
         document.querySelectorAll('.answer-option').forEach(option => {
             option.classList.remove('selected');
         });
 
-        // Add selection to clicked answer with animation
+        // Add selection to clicked answer
         const selectedOption = document.querySelector(`[data-answer="${answer}"]`);
         selectedOption.classList.add('selected');
         
         // Store user answer
         this.userAnswers[this.currentQuestion] = answer;
-
-        // Show selection feedback
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 1000,
-            timerProgressBar: true,
-            customClass: {
-                popup: 'colored-toast'
-            }
-        });
-
-        await Toast.fire({
-            icon: 'success',
-            title: 'Đã chọn đáp án!'
-        });
     }
 
     async nextQuestion() {
@@ -242,7 +236,7 @@ class QuizApp {
 
     calculateScore() {
         this.score = 0;
-        questions.forEach((question, index) => {
+        this.questions.forEach((question, index) => {
             if (this.userAnswers[index] === question.answer) {
                 this.score++;
             }
@@ -447,25 +441,51 @@ class QuizApp {
         const reviewContent = document.getElementById('review-content');
         reviewContent.innerHTML = '';
 
-        questions.forEach((question, index) => {
+        this.questions.forEach((question, index) => {
             const userAnswer = this.userAnswers[index];
             const isCorrect = userAnswer === question.answer;
-            
+
+            // Tạo item review cho từng câu
             const reviewItem = document.createElement('div');
             reviewItem.className = `review-item ${isCorrect ? 'correct' : 'incorrect'}`;
-            
+            reviewItem.style.marginBottom = '28px';
+            reviewItem.style.background = '#fff';
+            reviewItem.style.borderRadius = '18px';
+            reviewItem.style.boxShadow = '0 2px 12px rgba(102,126,234,0.06)';
+            reviewItem.style.padding = '18px 10px 10px 10px';
             reviewItem.innerHTML = `
-                <div class="review-question">
-                    <strong>Câu ${question.numb}:</strong> ${question.question}
-                </div>
-                <div class="review-answer correct">
-                    ✅ <strong>Đáp án đúng:</strong> ${question.answer}
-                </div>
-                ${userAnswer ? `<div class="review-answer user ${isCorrect ? 'correct' : 'incorrect'}">
-                    ${isCorrect ? '✅' : '❌'} <strong>Bạn chọn:</strong> ${userAnswer}
-                </div>` : '<div class="review-answer user">❓ <strong>Bạn chưa chọn đáp án</strong></div>'}
+                <div class="review-question" style="font-weight:600; margin-bottom:8px; color:#222;">Câu ${index + 1}: ${question.question}</div>
+                <div class="review-answers"></div>
             `;
-            
+            const answersDiv = reviewItem.querySelector('.review-answers');
+
+            // Hiển thị tất cả đáp án với trạng thái
+            question.options.forEach((option, i) => {
+                const optionLetter = String.fromCharCode(65 + i);
+                let answerClass = '';
+                if (option === question.answer) answerClass += ' correct';
+                if (userAnswer === option && option === question.answer) answerClass += ' selected';
+                if (userAnswer === option && option !== question.answer) answerClass += ' incorrect selected';
+
+                const answerDiv = document.createElement('div');
+                answerDiv.className = 'review-answer-item' + answerClass;
+                answerDiv.innerHTML = `
+                    <span class="answer-label">${optionLetter}</span>
+                    <span>${option}</span>
+                `;
+                answersDiv.appendChild(answerDiv);
+            });
+
+            // Nếu chưa chọn đáp án nào, thêm thông báo
+            if (!userAnswer) {
+                const note = document.createElement('div');
+                note.style.color = '#f44336';
+                note.style.fontSize = '0.98em';
+                note.style.marginTop = '6px';
+                note.textContent = 'Bạn chưa chọn đáp án cho câu này.';
+                reviewItem.appendChild(note);
+            }
+
             reviewContent.appendChild(reviewItem);
         });
 
@@ -572,4 +592,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mặc định hiển thị Home
     showHome();
+
+    const finishBtn = document.getElementById('finish-btn');
+    finishBtn.addEventListener('click', async () => {
+        if (window.quizAppInstance) {
+            const result = await Swal.fire({
+                title: 'Kết thúc bài thi?',
+                text: 'Bạn có chắc chắn muốn nộp bài và xem kết quả ngay bây giờ?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: '✅ Nộp bài',
+                cancelButtonText: '❌ Tiếp tục làm',
+                confirmButtonColor: '#ff0844',
+                cancelButtonColor: '#6c757d'
+            });
+            if (result.isConfirmed) {
+                window.quizAppInstance.finishQuiz();
+            }
+        }
+    });
 });
