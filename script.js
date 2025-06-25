@@ -538,5 +538,38 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    new QuizApp();
+    // Home/Quiz navigation logic
+    const homeScreen = document.getElementById('home-screen');
+    const quizHeader = document.querySelector('header');
+    const quizMain = document.querySelector('.quiz-container');
+    const scoreContainer = document.getElementById('score-container');
+    const reviewContainer = document.getElementById('review-container');
+    const quizBtn = document.getElementById('quiz-btn');
+    const backToQuizBtn = document.getElementById('back-to-quiz');
+
+    function showQuiz() {
+        homeScreen.style.display = 'none';
+        quizHeader.style.display = '';
+        quizMain.style.display = '';
+        scoreContainer.style.display = 'none';
+        reviewContainer.style.display = 'none';
+    }
+    function showHome() {
+        homeScreen.style.display = '';
+        quizHeader.style.display = 'none';
+        quizMain.style.display = 'none';
+        scoreContainer.style.display = 'none';
+        reviewContainer.style.display = 'none';
+    }
+
+    quizBtn.addEventListener('click', () => {
+        showQuiz();
+        if (!window.quizAppInstance) {
+            window.quizAppInstance = new QuizApp();
+        }
+    });
+    backToQuizBtn.addEventListener('click', showHome);
+
+    // Mặc định hiển thị Home
+    showHome();
 });

@@ -534,4 +534,171 @@ header h1 {
 @keyframes scorePulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
+}
+
+/* Home Screen Styles */
+.home-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 40px 10px 30px 10px;
+    background: none;
+}
+
+.main-title {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333;
+    text-align: center;
+}
+
+.mode-select {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mode-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.15);
+    padding: 40px 32px 32px 32px;
+    min-width: 180px;
+    min-height: 180px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+    outline: none;
+}
+
+.mode-btn .mode-icon {
+    font-size: 2.5em;
+    margin-bottom: 18px;
+}
+
+.mode-btn .mode-title {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.mode-btn .mode-desc {
+    font-size: 1em;
+    color: #feca57;
+    font-weight: 400;
+}
+
+.mode-btn:disabled,
+.mode-btn[disabled] {
+    background: #e0e0e0;
+    color: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.mode-btn.active,
+.mode-btn:not(:disabled):hover {
+    background: linear-gradient(135deg, #ff6b6b, #feca57);
+    color: white;
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 12px 32px rgba(255, 107, 107, 0.18);
+}
+
+/* Responsive for Home Screen and Quiz */
+@media (max-width: 900px) {
+    .container {
+        max-width: 98vw;
+        min-width: unset;
+    }
+    .mode-select {
+        gap: 18px;
+    }
+    .mode-btn {
+        min-width: 140px;
+        min-height: 140px;
+        padding: 28px 12px 18px 12px;
+        font-size: 1em;
+    }
+    .main-title {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        min-width: unset;
+        max-width: 100vw;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+    }
+    .home-screen {
+        padding: 20px 2vw 10px 2vw;
+        min-height: 60vh;
+    }
+    .mode-select {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .mode-btn {
+        width: 100%;
+        min-width: unset;
+        min-height: 90px;
+        padding: 18px 0 12px 0;
+        font-size: 0.98em;
+    }
+    .main-title {
+        font-size: 1.1em;
+        margin-bottom: 18px;
+    }
+    .quiz-container, .score-container, .review-container {
+        padding: 10px 2vw;
+    }
+    .question-card {
+        border-radius: 10px;
+    }
+    #question-text {
+        font-size: 1em;
+    }
+    .answers {
+        gap: 8px;
+    }
+    .answer-option {
+        padding: 10px;
+        font-size: 0.98em;
+    }
+    .score-display {
+        font-size: 2em;
+    }
+    .percentage {
+        font-size: 1.1em;
+    }
+}
+
+/* Đảm bảo các popup SweetAlert2 cũng responsive */
+.swal2-popup {
+    max-width: 95vw !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 400px) {
+    .mode-btn .mode-title {
+        font-size: 1em;
+    }
+    .mode-btn .mode-icon {
+        font-size: 1.5em;
+    }
 } 

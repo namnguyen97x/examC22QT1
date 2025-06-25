@@ -11,7 +11,25 @@
 </head>
 <body>
     <div class="container">
-        <header>
+        <!-- Home Screen -->
+        <div id="home-screen" class="home-screen">
+            <h1 class="main-title">🌐 Ôn tập Mạng Máy Tính</h1>
+            <div class="mode-select">
+                <button class="mode-btn" id="essay-btn" disabled>
+                    <span class="mode-icon">📝</span>
+                    <span class="mode-title">Tự luận</span>
+                    <span class="mode-desc">(Sắp ra mắt)</span>
+                </button>
+                <button class="mode-btn active" id="quiz-btn">
+                    <span class="mode-icon">🧑‍💻</span>
+                    <span class="mode-title">Trắc nghiệm</span>
+                    <span class="mode-desc">99 câu hỏi, có chấm điểm</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Quiz App (ẩn mặc định) -->
+        <header style="display:none">
             <h1>🌐 Trắc nghiệm Mạng Máy Tính</h1>
             <div class="progress-bar">
                 <div class="progress" id="progress"></div>
@@ -21,7 +39,7 @@
             </div>
         </header>
 
-        <main class="quiz-container">
+        <main class="quiz-container" style="display:none">
             <div class="question-card">
                 <h2 id="question-text">Đang tải câu hỏi...</h2>
                 <div class="answers" id="answers-container">
