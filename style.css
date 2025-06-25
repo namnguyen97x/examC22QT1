@@ -764,16 +764,87 @@ header h1 {
     margin-top: 18px;
     flex-wrap: wrap;
 }
+.review-actions .nav-btn, .review-actions .restart-btn {
+    border-radius: 28px !important;
+    background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
+    color: #1976d2;
+    font-size: 1.15em;
+    font-weight: 600;
+    padding: 18px 36px;
+    margin: 0 4px;
+    box-shadow: 0 2px 10px rgba(102,126,234,0.08);
+    border: none;
+    transition: all 0.2s;
+    outline: none;
+    cursor: pointer;
+    min-width: 160px;
+}
+.review-actions .restart-btn {
+    background: linear-gradient(90deg, #ffb199 0%, #ff0844 100%);
+    color: #fff;
+}
+.review-actions .nav-btn:hover {
+    background: linear-gradient(90deg, #90caf9 0%, #e3f0ff 100%);
+    color: #0d47a1;
+    transform: translateY(-2px) scale(1.04);
+}
+.review-actions .restart-btn:hover {
+    background: linear-gradient(90deg, #ff0844 0%, #ffb199 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+}
 @media (max-width: 600px) {
-    .review-actions {
-        flex-direction: column;
-        gap: 10px;
-        align-items: stretch;
-    }
     .review-actions .nav-btn, .review-actions .restart-btn {
         width: 100%;
         font-size: 1.08em;
-        padding: 16px 0;
-        border-radius: 22px;
+        padding: 18px 0;
+        border-radius: 24px;
+        min-width: unset;
+    }
+}
+
+.score-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+.score-actions .restart-btn, .score-actions .review-btn {
+    border-radius: 28px !important;
+    background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
+    color: #1976d2;
+    font-size: 1.15em;
+    font-weight: 600;
+    padding: 18px 36px;
+    margin: 0 4px;
+    box-shadow: 0 2px 10px rgba(102,126,234,0.08);
+    border: none;
+    transition: all 0.2s;
+    outline: none;
+    cursor: pointer;
+    min-width: 160px;
+}
+.score-actions .restart-btn {
+    background: linear-gradient(90deg, #ffb199 0%, #ff0844 100%);
+    color: #fff;
+}
+.score-actions .review-btn:hover {
+    background: linear-gradient(90deg, #90caf9 0%, #e3f0ff 100%);
+    color: #0d47a1;
+    transform: translateY(-2px) scale(1.04);
+}
+.score-actions .restart-btn:hover {
+    background: linear-gradient(90deg, #ff0844 0%, #ffb199 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+}
+@media (max-width: 600px) {
+    .score-actions .restart-btn, .score-actions .review-btn {
+        width: 100%;
+        font-size: 1.08em;
+        padding: 18px 0;
+        border-radius: 24px;
+        min-width: unset;
     }
 } 
