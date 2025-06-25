@@ -1,0 +1,537 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-height: 600px;
+}
+
+header {
+    background: linear-gradient(135deg, #ff6b6b, #feca57);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.progress-bar {
+    background: rgba(255, 255, 255, 0.3);
+    height: 8px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.progress {
+    background: white;
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+.question-counter {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.quiz-container {
+    padding: 40px;
+}
+
+.question-card {
+    background: white;
+    border-radius: 15px;
+    padding: 0;
+}
+
+#question-text {
+    font-size: 1.4em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.answers {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.answer-option {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    position: relative;
+}
+
+.answer-option:hover {
+    background: #e3f2fd;
+    border-color: #2196f3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.2);
+}
+
+.answer-option.selected {
+    background: #2196f3;
+    color: white;
+    border-color: #1976d2;
+}
+
+.answer-option.correct {
+    background: #4caf50;
+    color: white;
+    border-color: #388e3c;
+}
+
+.answer-option.incorrect {
+    background: #f44336;
+    color: white;
+    border-color: #d32f2f;
+}
+
+.answer-label {
+    background: #666;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.answer-option.selected .answer-label {
+    background: white;
+    color: #2196f3;
+}
+
+.answer-option.correct .answer-label {
+    background: white;
+    color: #4caf50;
+}
+
+.answer-option.incorrect .answer-label {
+    background: white;
+    color: #f44336;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.nav-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    max-width: 200px;
+}
+
+.nav-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.score-container {
+    text-align: center;
+    padding: 60px 40px;
+}
+
+.score-container h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.score-display {
+    font-size: 4em;
+    font-weight: 700;
+    color: #4caf50;
+    margin-bottom: 20px;
+}
+
+.percentage {
+    font-size: 2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.restart-btn, .review-btn {
+    background: linear-gradient(135deg, #ff6b6b, #feca57);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+}
+
+.restart-btn:hover, .review-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.review-container {
+    padding: 40px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.review-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.review-item {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #ddd;
+}
+
+.review-item.correct {
+    border-left-color: #4caf50;
+}
+
+.review-item.incorrect {
+    border-left-color: #f44336;
+}
+
+.review-question {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.review-answer {
+    margin: 5px 0;
+}
+
+.review-answer.correct {
+    color: #4caf50;
+    font-weight: 600;
+}
+
+.review-answer.incorrect {
+    color: #f44336;
+    font-weight: 600;
+}
+
+.review-answer.user {
+    color: #2196f3;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        border-radius: 15px;
+    }
+    
+    header {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .quiz-container {
+        padding: 20px;
+    }
+    
+    #question-text {
+        font-size: 1.2em;
+    }
+    
+    .answer-option {
+        padding: 15px;
+        font-size: 1em;
+    }
+    
+    .navigation {
+        flex-direction: column;
+    }
+    
+    .nav-btn {
+        max-width: none;
+    }
+    
+    .score-display {
+        font-size: 3em;
+    }
+    
+    .percentage {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    .quiz-container {
+        padding: 15px;
+    }
+    
+    .answer-option {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .answer-label {
+        margin: 0;
+    }
+}
+
+/* SweetAlert2 Custom Styles */
+.swal2-popup {
+    border-radius: 20px !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.swal2-title {
+    font-size: 1.8em !important;
+    color: #333 !important;
+}
+
+.swal2-content {
+    font-size: 1.1em !important;
+    color: #666 !important;
+}
+
+.swal2-confirm {
+    border-radius: 25px !important;
+    padding: 12px 30px !important;
+    font-weight: 600 !important;
+    font-size: 1em !important;
+}
+
+.swal2-cancel {
+    border-radius: 25px !important;
+    padding: 12px 30px !important;
+    font-weight: 600 !important;
+    font-size: 1em !important;
+}
+
+/* Toast Notification Styles */
+.swal2-toast {
+    border-radius: 15px !important;
+    font-weight: 500 !important;
+}
+
+.colored-toast.swal2-icon-success {
+    background-color: #4caf50 !important;
+    color: white !important;
+}
+
+.colored-toast.swal2-icon-error {
+    background-color: #f44336 !important;
+    color: white !important;
+}
+
+.colored-toast.swal2-icon-warning {
+    background-color: #ff9800 !important;
+    color: white !important;
+}
+
+/* Animation for transitions */
+.quiz-container {
+    transition: opacity 0.3s ease;
+}
+
+/* Loading animation */
+.swal2-loading .swal2-styled {
+    background-color: transparent !important;
+}
+
+/* Progress bar animation */
+.progress {
+    transition: width 0.5s ease;
+}
+
+/* Hover effects for better interaction */
+.answer-option {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.answer-option:hover {
+    transform: translateY(-3px);
+}
+
+.answer-option:active {
+    transform: translateY(-1px);
+}
+
+/* Success animation */
+@keyframes successPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.answer-option.selected {
+    animation: successPulse 0.3s ease;
+}
+
+/* Celebration Popup Styles */
+.celebration-popup {
+    border-radius: 25px !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3) !important;
+    animation: celebrationBounce 0.6s ease !important;
+}
+
+.celebration-popup .swal2-title {
+    font-size: 1.6em !important;
+    font-weight: 700 !important;
+    margin-bottom: 1em !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.celebration-popup .swal2-content {
+    font-size: 1.2em !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+}
+
+.celebration-popup .swal2-confirm {
+    font-size: 1.1em !important;
+    padding: 15px 35px !important;
+    border-radius: 30px !important;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.celebration-popup .swal2-confirm:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 25px rgba(102, 126, 234, 0.4) !important;
+}
+
+/* Celebration animation */
+@keyframes celebrationBounce {
+    0% { 
+        transform: scale(0.3) rotate(-10deg);
+        opacity: 0;
+    }
+    50% { 
+        transform: scale(1.05) rotate(2deg);
+        opacity: 1;
+    }
+    70% { 
+        transform: scale(0.95) rotate(-1deg);
+    }
+    100% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+/* Floating animation for backdrop */
+@keyframes floatEmoji {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(5deg); }
+    66% { transform: translateY(-5px) rotate(-3deg); }
+}
+
+/* Confetti falling animation */
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Sparkle floating animation */
+@keyframes sparkleFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-20px) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.8);
+    }
+}
+
+/* Enhanced celebration popup with glow effect */
+.celebration-popup {
+    border-radius: 25px !important;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.3),
+        0 0 50px rgba(102, 126, 234, 0.3) !important;
+    animation: celebrationBounce 0.6s ease !important;
+    overflow: visible !important;
+}
+
+/* Special confetti container styling */
+#confetti-container {
+    overflow: hidden;
+}
+
+/* Pulse effect for high scores */
+@keyframes scorePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+} 
