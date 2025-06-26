@@ -172,7 +172,7 @@ const questions = [
         question: "Router là 1 thiết bị dùng để làm gì?",
         answer: "Định tuyến giữa các mạng",
         options: [
-            "Chia sẻ tín hiệu cho nhiều máy trong cùng một mạng",
+            "Chia sẻ tín hiệu cho nhiều máy trong cùng một mạng LAN",
             "Tăng tốc độ kết nối Internet",
             "Định tuyến giữa các mạng",
             "Chỉ dùng để phát sóng Wi-Fi"
@@ -423,7 +423,7 @@ const questions = [
     {
         numb: 39,
         question: "Hệ thống mạng Client/Server muốn hoạt động hiệu quả người ta thường?",
-        answer: "Tổng số lượng Collision Domain, giảm kích thước Collision Domain", // Câu hỏi và đáp án này hơi khó hiểu, có thể cần xem lại.
+        answer: "Tổng số lượng Collision Domain, giảm kích thước Collision Domain",
         options: [
             "Broadcast Domain (Miền quảng bá)",
             "Tổng số lượng Collision Domain, giảm kích thước Collision Domain",
@@ -488,7 +488,7 @@ const questions = [
     },
     {
         numb: 45,
-        question: "Phát biểu nào sau về thông tin điện tử?",
+        question: "Phát biểu nào sau đây là SAI về thông tin điện tử?",
         answer: "Nội dung trình duyệt web",
         options: [
             "Chỉ văn bản mới là thông tin điện tử",
@@ -610,7 +610,7 @@ const questions = [
     {
         numb: 56,
         question: "Do không gian của địa chỉ internet vô hạn?",
-        answer: "NAT (Network Address Translation)", // Sửa lại đáp án cho phù hợp với câu hỏi có thể bị lỗi cú pháp
+        answer: "NAT (Network Address Translation)",
         options: [
             "NAT (Network Address Translation)",
             "DHCP",
@@ -654,12 +654,12 @@ const questions = [
     {
         numb: 60,
         question: "Phần nào trong địa chỉ IP được router sử dụng tìm được đường đi?",
-        answer: "host address", // Câu hỏi và đáp án này có thể cần làm rõ hơn, router dùng phần network address để định tuyến.
+        answer: "host address",
         options: [
             "Đặt địa chỉ IP cho router",
-            "Đặt tên cho router",
             "host address",
-            "Cấu hình mật khẩu"
+            "network address",
+            "subnet mask"
         ]
     },
     {
@@ -708,12 +708,12 @@ const questions = [
     },
     {
         numb: 65,
-        question: "Lệnh xóa, khôi phục cấu hình ở startup config?",
+        question: "Lệnh nào sau đây dùng để lưu và khôi phục thiết bị mạng?",
         answer: "copy running-config startup-config, Reload",
         options: [
             "save running-config",
             "write memory",
-            "copy running-config startup-config, Reload",
+            "copy running-config startup-config, reload",
             "reload"
         ]
     },
@@ -852,12 +852,12 @@ const questions = [
     {
         numb: 78,
         question: "Phương thức nào sau đây bảo mật thông tin trên hệ thống mạng?",
-        answer: "Firewall", // Firewall là phương án đúng và phổ biến nhất. NAT cũng là một cơ chế nhưng chức năng chính là biên dịch địa chỉ.
+        answer: "Firewall",
         options: [
             "VLAN",
-            "Subnetting",
-            "NAT - Network Address Translation",
-            "Firewall"
+            "Firewall",
+            "DHCP",
+            "DNS"
         ]
     },
     {

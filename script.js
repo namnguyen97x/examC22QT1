@@ -85,11 +85,17 @@ class QuizApp {
             return;
         }
 
+        // Check if answer exists in options
+        if (!question.options.includes(question.answer)) {
+            console.error('Answer not found in options:', question.answer, 'Options:', question.options);
+        }
+
         question.options.forEach((option, index) => {
             const optionLetter = String.fromCharCode(65 + index); // A, B, C, D
             const answerDiv = document.createElement('div');
             answerDiv.className = 'answer-option';
             answerDiv.dataset.answer = option;
+            answerDiv.dataset.index = index;
             
             // Check if this answer was previously selected
             if (this.userAnswers[this.currentQuestion] === option) {
@@ -101,7 +107,10 @@ class QuizApp {
                 <span class="answer-text">${option}</span>
             `;
 
-            answerDiv.addEventListener('click', () => this.selectAnswer(option));
+            answerDiv.addEventListener('click', () => {
+                console.log('Answer clicked:', option); // Debug log
+                this.selectAnswer(option);
+            });
             answersContainer.appendChild(answerDiv);
         });
 
@@ -109,17 +118,43 @@ class QuizApp {
     }
 
     async selectAnswer(answer) {
+        console.log('Selecting answer:', answer); // Debug log
+        
         // Remove previous selection
         document.querySelectorAll('.answer-option').forEach(option => {
             option.classList.remove('selected');
         });
 
-        // Add selection to clicked answer
-        const selectedOption = document.querySelector(`[data-answer="${answer}"]`);
-        selectedOption.classList.add('selected');
+        // Add selection to clicked answer - use a more robust approach
+        const answerOptions = document.querySelectorAll('.answer-option');
+        let found = false;
+        
+        answerOptions.forEach(option => {
+            const optionText = option.querySelector('.answer-text').textContent;
+            if (optionText === answer) {
+                option.classList.add('selected');
+                found = true;
+                console.log('Answer selected successfully:', answer); // Debug log
+            }
+        });
+        
+        // Fallback: if text matching fails, try using data-answer attribute
+        if (!found) {
+            const fallbackOption = document.querySelector(`[data-answer="${answer}"]`);
+            if (fallbackOption) {
+                fallbackOption.classList.add('selected');
+                found = true;
+                console.log('Answer selected using fallback method:', answer); // Debug log
+            }
+        }
+        
+        if (!found) {
+            console.error('Could not find answer option:', answer); // Debug log
+        }
         
         // Store user answer
         this.userAnswers[this.currentQuestion] = answer;
+        console.log('User answers updated:', this.userAnswers); // Debug log
     }
 
     async nextQuestion() {
