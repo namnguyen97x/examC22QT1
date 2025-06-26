@@ -71,7 +71,7 @@ const questions = [
     {
         numb: 7,
         question: "Mạng không dây được kết nối bằng gì?",
-        answer: "Wi-Fi", // Sửa lại câu trả lời cho chính xác hơn, Wi-Fi là phương thức kết nối phổ biến, Bluetooth cũng có nhưng ít dùng cho mạng diện rộng.
+        answer: "Bluetooth", 
         options: [
             "Bluetooth",
             "Wi-Fi",
