@@ -423,10 +423,10 @@ const questions = [
     {
         numb: 39,
         question: "Hệ thống mạng Client/Server muốn hoạt động hiệu quả người ta thường?",
-        answer: "Tổng số lượng Collision Domain, giảm kích thước Collision Domain",
+        answer: "Tăng số lượng Collision Domain, giảm kích thước Collision Domain",
         options: [
             "Broadcast Domain (Miền quảng bá)",
-            "Tổng số lượng Collision Domain, giảm kích thước Collision Domain",
+            "Tăng số lượng Collision Domain, giảm kích thước Collision Domain",
             "Subnet",
             "VLAN"
         ]
@@ -862,7 +862,7 @@ const questions = [
     },
     {
         numb: 79,
-        question: "Trên máy chủ có một bản ghi dịch vụ DNS (Vnvc.edu.vn, 125.6.5.7.NS). Hãy chọn câu trả lời đúng?",
+        question: "Trên máy chủ có một bản ghi dịch vụ DNS (Vsvc.edu.vn, 125.6.5.7.NS). Hãy chọn câu trả lời đúng?",
         answer: "vsvc.edu.vn là tên miền chứ không phải một máy chủ",
         options: [
             "A (Address)",
