@@ -15,7 +15,7 @@ const questions = [
     },
     {
         numb: 2,
-        question: "Cáp mạng là thiết bị hoạt động ở tầng nào của mô hình OSI?",
+        question: "Cáp mạng là thiết bị hoạt động ở tầng nào của OSI?",
         answer: "Tầng vật lý",
         options: [
             "Tầng mạng",
@@ -26,7 +26,7 @@ const questions = [
     },
     {
         numb: 3,
-        question: "Việc định nghĩa địa chỉ IP được thực hiện tại tầng nào?",
+        question: "Định nghĩa địa chỉ IP được thực hiện tại tầng nào?",
         answer: "Tầng mạng",
         options: [
             "Tầng vật lý",
@@ -37,7 +37,7 @@ const questions = [
     },
     {
         numb: 4,
-        question: "Cáp quang có ưu điểm gì nổi bật?",
+        question: "Cáp quang có ưu điểm gì?",
         answer: "Chống nhiễu, truyền xa hơn, chống nghe trộm",
         options: [
             "Giá thành rẻ, dễ lắp đặt",
@@ -48,7 +48,7 @@ const questions = [
     },
     {
         numb: 5,
-        question: "Để kết nối trực tiếp hai máy tính (PC) với nhau dùng cáp UTP thì bấm cáp như thế nào?",
+        question: "Để kết nối PC với PC dùng cáp UTP thì bấm cáp như thế nào?",
         answer: "Bấm cáp chéo",
         options: [
             "Bấm cáp thẳng",
@@ -59,19 +59,19 @@ const questions = [
     },
     {
         numb: 6,
-        question: "Thiết bị cơ bản và phổ biến nhất của mạng không dây là gì?",
-        answer: "Cục router (Access Point)",
+        question: "Thiết bị cơ bản của mạng không dây là gì?",
+        answer: "Card mạng",
         options: [
             "Hub",
             "Switch",
-            "Card mạng có dây",
-            "Cục router (Access Point)"
+            "Card mạng",
+            "Cục router"
         ]
     },
     {
         numb: 7,
-        question: "Mạng không dây thường được kết nối bằng công nghệ nào?",
-        answer: "Wi-Fi",
+        question: "Mạng không dây được kết nối bằng gì?",
+        answer: "Wi-Fi", // Sửa lại câu trả lời cho chính xác hơn, Wi-Fi là phương thức kết nối phổ biến, Bluetooth cũng có nhưng ít dùng cho mạng diện rộng.
         options: [
             "Bluetooth",
             "Wi-Fi",
@@ -81,7 +81,7 @@ const questions = [
     },
     {
         numb: 8,
-        question: "Phát biểu nào sau đây không phải là lợi ích của mạng không dây?",
+        question: "Những lợi ích sau, Lợi ích nào không phải của mạng không dây?",
         answer: "Tốc độ cao như mạng có dây",
         options: [
             "Linh hoạt, dễ di chuyển",
@@ -92,7 +92,7 @@ const questions = [
     },
     {
         numb: 9,
-        question: "Đâu là một kiểu antenna thường dùng cho Wireless LAN?",
+        question: "Kiểu antenna của wireless LAN là?",
         answer: "Yagi",
         options: [
             "Yagi",
@@ -103,19 +103,19 @@ const questions = [
     },
     {
         numb: 10,
-        question: "Cơ chế lọc địa chỉ MAC trong Wireless LAN thực hiện bảo mật như thế nào?",
-        answer: "Chỉ cho phép các thiết bị có MAC trong danh sách được kết nối",
+        question: "Cơ chế lọc địa chỉ MAC thực hiện việc bảo mật trong Wireless LAN như thế nào?",
+        answer: "Wireless router thực hiện lọc địa chỉ MAC, bỏ qua yêu cầu kiểm tra ISP",
         options: [
             "Mã hóa tất cả dữ liệu truyền đi",
-            "Chỉ cho phép các thiết bị có MAC trong danh sách được kết nối",
+            "Wireless router thực hiện lọc địa chỉ MAC, bỏ qua yêu cầu kiểm tra ISP",
             "Yêu cầu ISP kiểm tra",
             "Thay đổi địa chỉ IP liên tục"
         ]
     },
     {
         numb: 11,
-        question: "Ưu điểm nào sau đây là của mạng không dây?",
-        answer: "Không cần dây cáp",
+        question: "Những ưu điểm sau, ưu điểm nào không phải của mạng không dây?",
+        answer: "Bảo mật tuyệt đối", // Sửa lại câu trả lời cho hợp lý hơn
         options: [
             "Không cần dây cáp",
             "Bảo mật tuyệt đối",
@@ -125,56 +125,56 @@ const questions = [
     },
     {
         numb: 12,
-        question: "Windows Server 2019 khác Windows 10 chủ yếu ở điểm nào?",
-        answer: "Quản lý tài nguyên, dịch vụ mạng và phân quyền truy cập",
+        question: "Khi cài hệ điều hành window server 2019 chỉ ra một điểm khác biệt so với window 10?",
+        answer: "Thiết lập bản quyền truy cập",
         options: [
             "Giao diện đồ họa đẹp hơn",
-            "Quản lý tài nguyên, dịch vụ mạng và phân quyền truy cập",
+            "Thiết lập bản quyền truy cập",
             "Khả năng chơi game tốt hơn",
             "Có nhiều ứng dụng văn phòng hơn"
         ]
     },
     {
         numb: 13,
-        question: "Dịch vụ DNS (Domain Name System) là gì?",
-        answer: "Hệ thống phân giải tên miền thành địa chỉ IP và ngược lại",
+        question: "Dịch vụ DNS(DOMAIN NAME SYSTEM - Hệ thống tên miền) là hệ thống cho phép thiết lập tương ứng?",
+        answer: "Hệ thống cho phép phân giải tên miền thành địa chỉ và ngược lại",
         options: [
             "Dịch vụ cấp phát địa chỉ IP động",
-            "Hệ thống phân giải tên miền thành địa chỉ IP và ngược lại",
+            "Hệ thống cho phép phân giải tên miền thành địa chỉ và ngược lại",
             "Giao thức truyền tải siêu văn bản",
             "Dịch vụ tường lửa bảo vệ mạng"
         ]
     },
     {
         numb: 14,
-        question: "Trên Windows, dùng lệnh gì trong Command Prompt để kiểm tra cấu hình IP của máy tính?",
-        answer: "ipconfig",
+        question: "Khi 1 máy kết nối với hệ thống mạng có DHCP Server, dùng lệnh gì để kiểm tra IP?",
+        answer: "IPCONFIG",
         options: [
             "ping",
             "tracert",
             "netstat",
-            "ipconfig"
+            "IPCONFIG"
         ]
     },
     {
         numb: 15,
-        question: "Biện pháp nào sau đây là cơ bản và hiệu quả để bảo vệ dữ liệu trên mạng?",
-        answer: "Phân quyền truy cập và cài đặt mật khẩu mạnh",
+        question: "Biện pháp bảo vệ dữ liệu trên mạng đúng nhất là gì?",
+        answer: "Phân quyền và cài đặt password",
         options: [
             "Luôn tắt máy tính khi không sử dụng",
-            "Phân quyền truy cập và cài đặt mật khẩu mạnh",
+            "Phân quyền và cài đặt password",
             "Chỉ sử dụng mạng có dây",
             "Xóa lịch sử duyệt web thường xuyên"
         ]
     },
     {
         numb: 16,
-        question: "Router là một thiết bị dùng để làm gì?",
-        answer: "Định tuyến và kết nối các mạng khác nhau",
+        question: "Router là 1 thiết bị dùng để làm gì?",
+        answer: "Định tuyến giữa các mạng",
         options: [
             "Chia sẻ tín hiệu cho nhiều máy trong cùng một mạng",
             "Tăng tốc độ kết nối Internet",
-            "Định tuyến và kết nối các mạng khác nhau",
+            "Định tuyến giữa các mạng",
             "Chỉ dùng để phát sóng Wi-Fi"
         ]
     },
@@ -191,10 +191,10 @@ const questions = [
     },
     {
         numb: 18,
-        question: "Giao thức DHCP (Dynamic Host Configuration Protocol) cấp gì cho máy Client?",
-        answer: "Cấp địa chỉ IP động",
+        question: "Giao thức DHCP cấp gì cho các trạm Client?",
+        answer: "Cấp địa chỉ IP",
         options: [
-            "Cấp địa chỉ IP động",
+            "Cấp địa chỉ IP",
             "Cấp tên miền (Domain Name)",
             "Cấp địa chỉ MAC",
             "Cấp quyền truy cập thư mục"
@@ -202,7 +202,7 @@ const questions = [
     },
     {
         numb: 19,
-        question: "Dịch vụ nào giúp 'phiên dịch' tên miền (ví dụ: google.com) thành địa chỉ IP khi duyệt Internet?",
+        question: "Dịch vụ nào tham chiếu host bằng tên thay cho việc dùng địa chỉ IP khi duyệt Internet?",
         answer: "DNS",
         options: [
             "DHCP",
@@ -213,7 +213,7 @@ const questions = [
     },
     {
         numb: 20,
-        question: "Để truyền tải tập tin, giao thức FTP (File Transfer Protocol) sử dụng cổng điều khiển (control port) mặc định là bao nhiêu?",
+        question: "Để truyền tải được tập tin, giao thức FTP sử dụng dịch vụ ở cổng số mấy?",
         answer: "21",
         options: [
             "80",
@@ -224,7 +224,7 @@ const questions = [
     },
     {
         numb: 21,
-        question: "Giao thức SMTP (Simple Mail Transfer Protocol) dùng cổng dịch vụ mặc định nào để gửi mail?",
+        question: "Giao thức SMTP dùng cổng dịch vụ nào để gửi mail?",
         answer: "25",
         options: [
             "110",
@@ -235,7 +235,7 @@ const questions = [
     },
     {
         numb: 22,
-        question: "Giao thức POP3 (Post Office Protocol version 3) dùng để nhận mail sử dụng cổng mặc định nào?",
+        question: "Để kết nối với mail server và tải xuống máy tính giao thức pop3 sử dụng cổng số mấy?",
         answer: "110",
         options: [
             "110",
@@ -246,18 +246,18 @@ const questions = [
     },
     {
         numb: 23,
-        question: "Trong công nghệ ảo hóa, hệ điều hành chạy bên trong máy ảo được gọi là gì?",
-        answer: "Guest operating system (Hệ điều hành khách)",
+        question: "Mỗi hệ điều hành được chạy trên một máy ảo được gọi là?",
+        answer: "Guest operating system",
         options: [
             "Host operating system (Hệ điều hành chủ)",
-            "Guest operating system (Hệ điều hành khách)",
+            "Guest operating system",
             "Virtual operating system",
             "Embedded operating system"
         ]
     },
     {
         numb: 24,
-        question: "IPv6 có không gian địa chỉ là bao nhiêu bit?",
+        question: "IPv6 có không gian địa chỉ là bao nhiêu?",
         answer: "128 bit",
         options: [
             "32 bit",
@@ -268,7 +268,7 @@ const questions = [
     },
     {
         numb: 25,
-        question: "Phần Header (phần đầu) của gói tin IPv6 có kích thước cố định là bao nhiêu byte?",
+        question: "Gói tin IPv6 có bao nhiêu byte trong phần tiêu đề?",
         answer: "40 bytes",
         options: [
             "20 bytes",
@@ -279,62 +279,62 @@ const questions = [
     },
     {
         numb: 26,
-        question: "Khái niệm nào mô tả việc giữ cho đồng hồ của các hệ thống máy tính khác nhau chạy khớp với nhau?",
-        answer: "Đồng bộ hóa thời gian (Time Synchronization)",
+        question: "Quá trình di chuyển từ hệ thống máy tính này sang hệ thống máy tính khác phải trải qua giai đoạn nào?",
+        answer: "Đóng gói",
         options: [
             "Phân giải tên miền",
-            "Đồng bộ hóa thời gian (Time Synchronization)",
+            "Đóng gói",
             "Định tuyến gói tin",
             "Mã hóa dữ liệu"
         ]
     },
     {
         numb: 27,
-        question: "Để kết nối các mạng LAN, WAN, MAN độc lập với nhau, người ta dùng thiết bị có chức năng gì?",
-        answer: "Định tuyến (Routing)",
+        question: "Kết nối kiểu mạng MAN, LAN, WAN độc lập với nhau bằng các thiết bị có chức năng gì?",
+        answer: "Định tuyến",
         options: [
             "Chuyển mạch (Switching)",
             "Lặp lại tín hiệu (Repeating)",
-            "Định tuyến (Routing)",
+            "Định tuyến",
             "Tập trung (Hub)"
         ]
     },
     {
         numb: 28,
-        question: "Mạng Intranet là gì?",
-        answer: "Mạng LAN riêng của một tổ chức, sử dụng công nghệ Internet",
+        question: "Mạng Internet là sự phát triển của?",
+        answer: "Mạng Lan, wan và Intranet",
         options: [
             "Một tên gọi khác của mạng Internet toàn cầu",
-            "Mạng LAN riêng của một tổ chức, sử dụng công nghệ Internet",
+            "Mạng Lan, wan và Intranet",
             "Mạng kết nối giữa các Intranet",
             "Mạng không dây công cộng"
         ]
     },
     {
         numb: 29,
-        question: "Chức năng chính của tầng Network trong mô hình OSI là gì?",
-        answer: "Định tuyến đường truyền và địa chỉ logic",
+        question: "Chức năng của tầng Network trong OSI là gì?",
+        answer: "Định tuyến đường truyền",
         options: [
             "Kiểm soát lỗi và luồng dữ liệu",
             "Cung cấp giao diện cho người dùng",
             "Mã hóa và nén dữ liệu",
-            "Định tuyến đường truyền và địa chỉ logic"
+            "Định tuyến đường truyền"
         ]
     },
     {
         numb: 30,
-        question: "Thiết bị Wireless Access Point (WAP) hoạt động ở tầng nào của mô hình OSI?",
-        answer: "Tầng Data link",
+        question: "Wireless access point thuộc tầng nào của OSI?",
+        answer: "Data link",
         options: [
-            "Tầng Physical",
-            "Tầng Data link",
-            "Tầng Network",
-            "Tầng Application"
+            "Physical",
+            "Data link",
+            "Network",
+            "Application"
         ]
     },
     {
         numb: 31,
-        question: "Công nghệ mạng LAN có dây nào được sử dụng phổ biến nhất hiện nay?",
+        question: "Công nghệ mạng Lan được sử phổ biến hiện nay?",
         answer: "Ethernet",
         options: [
             "Token Ring",
@@ -345,18 +345,18 @@ const questions = [
     },
     {
         numb: 32,
-        question: "Công nghệ Hyper-Threading được Intel tạo ra cho thiết bị nào?",
-        answer: "Processor (CPU)",
+        question: "Công nghệ Hyper-Threading được phát triển cho thiết bị nào sau đây?",
+        answer: "Processor",
         options: [
             "RAM",
             "Card đồ họa (GPU)",
             "Ổ cứng (HDD/SSD)",
-            "Processor (CPU)"
+            "Processor"
         ]
     },
     {
         numb: 33,
-        question: "VLAN là viết tắt của thuật ngữ nào?",
+        question: "VLAN là kỹ thuật viết tắt của cụm từ nào sau đây?",
         answer: "Virtual Local Area Network",
         options: [
             "Very Large Area Network",
@@ -367,161 +367,161 @@ const questions = [
     },
     {
         numb: 34,
-        question: "Ưu điểm của việc sử dụng mạng LAN ảo (VLAN) là gì?",
-        answer: "Tăng cường bảo mật và linh hoạt trong quản lý mạng",
+        question: "Ưu điểm của mạng LAN ảo (VLAN) là gì?",
+        answer: "Cho phép phân hoạch và cấu hình mạng",
         options: [
             "Tăng tốc độ truy cập Internet",
             "Giảm chi phí mua thiết bị mạng",
-            "Tăng cường bảo mật và linh hoạt trong quản lý mạng",
+            "Cho phép phân hoạch và cấu hình mạng",
             "Không cần sử dụng Switch"
         ]
     },
     {
         numb: 35,
-        question: "Trong Windows, lệnh nào dùng để ánh xạ một thư mục chia sẻ trên mạng thành một ổ đĩa trên máy tính?",
-        answer: "net use",
+        question: "Theo SV Data Center, có chia sẻ thư mục Software, lệnh để ánh xạ thư mục thực hiện ở đĩa ':X/cục bộ' trên máy là?",
+        answer: "Net use X: \\\\datacenter\\Software",
         options: [
-            "map",
-            "net use",
-            "assign",
-            "link"
+            "map X: \\\\datacenter\\Software",
+            "Net use X: \\\\datacenter\\Software",
+            "assign X: \\\\datacenter\\Software",
+            "link X: \\\\datacenter\\Software"
         ]
     },
     {
         numb: 36,
-        question: "Phương thức truyền thông điệp đến một nhóm các thiết bị đã định trước được gọi là gì?",
-        answer: "Multicast",
+        question: "Kiểu truyền thông multicast trong mô hình điểm - nhiều điểm là kiểu truyền thông mà?",
+        answer: "Một nhóm thiết bị nhận được thông điệp",
         options: [
             "Unicast",
             "Broadcast",
-            "Multicast",
+            "Một nhóm thiết bị nhận được thông điệp",
             "Anycast"
         ]
     },
     {
         numb: 37,
-        question: "Chức năng của tầng Presentation (trình bày) trong mô hình OSI là gì?",
-        answer: "Định dạng, mã hóa và nén dữ liệu",
+        question: "Các chức năng trình bày (Presentation) trong mô hình OSI là gì?",
+        answer: "Mã hóa dữ liệu",
         options: [
             "Thiết lập, quản lý và chấm dứt phiên làm việc",
             "Định tuyến gói tin",
-            "Định dạng, mã hóa và nén dữ liệu",
+            "Mã hóa dữ liệu",
             "Kiểm soát lỗi và luồng dữ liệu"
         ]
     },
     {
         numb: 38,
-        question: "Để các máy tính trong mạng có thể giao tiếp với nhau, chúng cần tuân theo bộ quy tắc chung được gọi là gì?",
-        answer: "Giao thức (Protocol)",
+        question: "Giao thức protocol trong hệ thống mạng?",
+        answer: "là các quy tắc cho phép các máy tính cá thể có thể giao tiếp với nhau",
         options: [
             "Phần cứng (Hardware)",
             "Phần mềm (Software)",
-            "Giao thức (Protocol)",
+            "là các quy tắc cho phép các máy tính cá thể có thể giao tiếp với nhau",
             "Hệ điều hành (Operating System)"
         ]
     },
     {
         numb: 39,
-        question: "Một vùng mạng mà trong đó các gói tin có thể va chạm với nhau khi truyền đi được gọi là gì?",
-        answer: "Collision Domain (Miền xung đột)",
+        question: "Hệ thống mạng Client/Server muốn hoạt động hiệu quả người ta thường?",
+        answer: "Tổng số lượng Collision Domain, giảm kích thước Collision Domain", // Câu hỏi và đáp án này hơi khó hiểu, có thể cần xem lại.
         options: [
             "Broadcast Domain (Miền quảng bá)",
-            "Collision Domain (Miền xung đột)",
+            "Tổng số lượng Collision Domain, giảm kích thước Collision Domain",
             "Subnet",
             "VLAN"
         ]
     },
     {
         numb: 40,
-        question: "Giao thức UDP (User Datagram Protocol) thường được sử dụng cho các ứng dụng nào?",
-        answer: "Streaming video, game online, DNS",
+        question: "Ứng dụng nào sau đây dùng giao thức UDP(User Datagram Protocol)?",
+        answer: "Web, DNS, điện thoại Internet",
         options: [
             "Tải file lớn, gửi email quan trọng",
-            "Streaming video, game online, DNS",
+            "Web, DNS, điện thoại Internet",
             "Truy cập website (HTTP)",
             "Tất cả các ứng dụng trên Internet"
         ]
     },
     {
         numb: 41,
-        question: "Khái niệm RTT (Round Trip Time) trong mạng máy tính là gì?",
-        answer: "Thời gian để một gói tin đi từ nguồn đến đích và quay trở lại",
+        question: "Khái niệm RTT (Round Trip-time), hãy xác định thời gian di chuyển của gói tin?",
+        answer: "Thời gian để gửi 1 gói nhỏ đi từ client đến server và quay lại",
         options: [
             "Thời gian để tải xong một trang web",
             "Tốc độ truyền dữ liệu của đường truyền",
-            "Thời gian để một gói tin đi từ nguồn đến đích và quay trở lại",
+            "Thời gian để gửi 1 gói nhỏ đi từ client đến server và quay lại",
             "Thời gian xử lý gói tin tại router"
         ]
     },
     {
         numb: 42,
-        question: "Một kết nối trong giao thức UDP hoặc TCP được xác định duy nhất bởi bộ 4 thông tin nào?",
-        answer: "IP nguồn, Port nguồn, IP đích, Port đích",
+        question: "Giao thức UDP socket xác định bởi?",
+        answer: "Địa chỉ IP nguồn, IP đích",
         options: [
             "Địa chỉ MAC nguồn và đích",
             "IP nguồn và IP đích",
             "Port nguồn và Port đích",
-            "IP nguồn, Port nguồn, IP đích, Port đích"
+            "Địa chỉ IP nguồn, IP đích"
         ]
     },
     {
         numb: 43,
-        question: "Giao thức TCP (Transmission Control Protocol) là giao thức:",
-        answer: "Hướng kết nối và đảm bảo độ tin cậy",
+        question: "Giao thức TCP xác định bởi?",
+        answer: "Địa chỉ IP nguồn, IP đích, Số port nguồn, Số port đích",
         options: [
             "Phi kết nối và không đảm bảo độ tin cậy",
             "Hướng kết nối và đảm bảo độ tin cậy",
             "Chỉ dùng để gửi dữ liệu, không nhận",
-            "Không sử dụng số hiệu cổng (port)"
+            "Địa chỉ IP nguồn, IP đích, Số port nguồn, Số port đích"
         ]
     },
     {
         numb: 44,
         question: "Thiết bị router cho phép làm gì?",
-        answer: "Tất cả các phương án trên",
+        answer: "Liên kết nhiều mạng lan lại với nhau, đồng thời ngăn cách các broadcast đi qua nó và giúp định tuyến cho các packet",
         options: [
             "Liên kết nhiều mạng LAN lại với nhau",
             "Ngăn chặn gói tin broadcast lan truyền giữa các mạng",
             "Định tuyến cho các packet tìm đường đi",
-            "Tất cả các phương án trên"
+            "Liên kết nhiều mạng lan lại với nhau, đồng thời ngăn cách các broadcast đi qua nó và giúp định tuyến cho các packet"
         ]
     },
     {
         numb: 45,
-        question: "Phát biểu nào sau đây đúng về thông tin điện tử?",
-        answer: "Nội dung của một trang web là một dạng thông tin điện tử",
+        question: "Phát biểu nào sau về thông tin điện tử?",
+        answer: "Nội dung trình duyệt web",
         options: [
             "Chỉ văn bản mới là thông tin điện tử",
             "Thông tin điện tử không thể sao chép",
-            "Nội dung của một trang web là một dạng thông tin điện tử",
+            "Nội dung trình duyệt web",
             "Thông tin điện tử chỉ tồn tại trên máy tính cá nhân"
         ]
     },
     {
         numb: 46,
-        question: "Thao tác nào sau đây không thể thực hiện được trực tiếp với nội dung của một trang web bạn đang xem?",
-        answer: "Xóa một đoạn văn bản trên trang web đó",
+        question: "Thao tác nào không thực hiện được với trang web?",
+        answer: "Xóa nội dung bằng cách chọn đoạn nội dung và nhấn nút Delete",
         options: [
             "Lưu trang web về máy",
             "Sao chép một đoạn văn bản",
             "In trang web",
-            "Xóa một đoạn văn bản trên trang web đó"
+            "Xóa nội dung bằng cách chọn đoạn nội dung và nhấn nút Delete"
         ]
     },
     {
         numb: 47,
-        question: "Trong trình duyệt web, để lưu lại toàn bộ nội dung trang web (bao gồm cả hình ảnh), bạn nên chọn tùy chọn nào trong hộp thoại Save As?",
-        answer: "Web Page, Complete",
+        question: "Trình duyệt Mozilla Firefox, khi muốn lưu nội dung trang web, dùng lệnh nào?",
+        answer: "Save As, Type: web page complete",
         options: [
             "Web Page, HTML Only",
             "Text File",
-            "Web Page, Complete",
+            "Save As, Type: web page complete",
             "All Files"
         ]
     },
     {
         numb: 48,
-        question: "Để thiết lập in trang web theo chiều ngang trong trình duyệt, bạn thường chọn tùy chọn nào?",
+        question: "Mozilla Firefox, thiết lập in ngang trang web, chọn file -> print setup -> ?",
         answer: "Landscape",
         options: [
             "Portrait",
@@ -532,150 +532,117 @@ const questions = [
     },
     {
         numb: 49,
-        question: "Chức năng chính của các phần mềm Internet Explorer, Mozilla Firefox, Google Chrome là gì?",
-        answer: "Trình duyệt web",
-        options: [
-            "Soạn thảo văn bản",
-            "Trình duyệt web",
-            "Gửi và nhận email",
-            "Chỉnh sửa ảnh"
-        ]
-    },
-    {
-        numb: 50,
-        question: "Để chuyển tiếp (Forward) một thư điện tử, bạn thường tìm biểu tượng hoặc nút nào?",
-        answer: "Mũi tên chỉ sang phải",
+        question: "Thư điện tử là thư truyền dưới dạng?",
+        answer: "Số",
         options: [
             "Thùng rác",
             "Mũi tên quay lại",
             "Mũi tên chỉ sang phải",
-            "Dấu cộng"
+            "Số"
         ]
     },
     {
-        numb: 51,
-        question: "Khi nhận được một email có tập tin đính kèm từ người lạ, bạn nên làm gì đầu tiên?",
-        answer: "Quét tệp tin bằng chương trình diệt virus trước khi mở",
+        numb: 50,
+        question: "Khi nhận được tập tin đính kèm, nên làm gì?",
+        answer: "Quét tệp tin máy bằng chương trình diệt virus",
         options: [
             "Mở ngay để xem nội dung",
             "Trả lời email để hỏi nội dung",
             "Xóa ngay email đó",
-            "Quét tệp tin bằng chương trình diệt virus trước khi mở"
+            "Quét tệp tin máy bằng chương trình diệt virus"
         ]
     },
     {
-        numb: 52,
-        question: "Máy tính kết nối Internet có thể sử dụng các dịch vụ nào?",
-        answer: "Tất cả các phương án trên",
-        options: [
-            "Duyệt web, gửi email",
-            "Xem video, nghe nhạc trực tuyến",
-            "Tải các tập tin",
-            "Tất cả các phương án trên"
-        ]
-    },
-    {
-        numb: 53,
-        question: "Trong khi xem các trang web, trình duyệt thường lưu lại một bản sao của trang vào bộ nhớ đệm (cache) để làm gì?",
-        answer: "Tăng tốc độ tải trang cho lần truy cập sau",
-        options: [
-            "Tăng tốc độ tải trang cho lần truy cập sau",
-            "Gửi thông tin về cho nhà cung cấp dịch vụ",
-            "Để xem khi không có mạng",
-            "Làm giảm bộ nhớ máy tính"
-        ]
-    },
-    {
-        numb: 54,
-        question: "Trong hệ thống thư điện tử, điều nào sau đây là sai?",
-        answer: "Hai người khác nhau có thể có địa chỉ thư giống hệt nhau",
+        numb: 51,
+        question: "Với thư điện tử, phát biểu nào là sai?",
+        answer: "Hai người có địa chỉ thư giống nhau hoahong@yahoo.com",
         options: [
             "Mỗi địa chỉ thư là duy nhất",
             "Có thể gửi thư cho nhiều người cùng lúc",
-            "Hai người khác nhau có thể có địa chỉ thư giống hệt nhau",
+            "Hai người có địa chỉ thư giống nhau hoahong@yahoo.com",
             "Có thể đính kèm tệp tin vào thư"
         ]
     },
     {
-        numb: 55,
-        question: "Để gửi một email cho nhiều người mà không muốn họ thấy địa chỉ email của nhau, bạn nên điền các địa chỉ đó vào trường nào?",
-        answer: "Bcc (Blind Carbon Copy)",
+        numb: 52,
+        question: "Một người dùng gửi nhiều hình ảnh ở nhiều nơi dùng gì?",
+        answer: "Thư điện tử từ đính kèm tệp",
         options: [
             "To",
             "Cc (Carbon Copy)",
             "Bcc (Blind Carbon Copy)",
-            "Subject"
+            "Thư điện tử từ đính kèm tệp"
         ]
     },
     {
-        numb: 56,
-        question: "Trên Windows, lệnh 'route print' trong Command Prompt dùng để làm gì?",
-        answer: "Hiển thị bảng định tuyến của máy tính",
+        numb: 53,
+        question: "Trên window server 2019 khi sử dụng lệnh 'Route Print' thì hiển thị gì?",
+        answer: "Hiển thị thông tin bảng định tuyến của máy tính",
         options: [
             "In một tài liệu",
             "Kiểm tra kết nối mạng",
-            "Hiển thị bảng định tuyến của máy tính",
+            "Hiển thị thông tin bảng định tuyến của máy tính",
             "Cấu hình địa chỉ IP"
         ]
     },
     {
-        numb: 57,
-        question: "Để nhiều thiết bị (PC, điện thoại) cùng kết nối Internet thông qua một đường truyền duy nhất, người ta thường dùng thiết bị nào?",
-        answer: "Router có chức năng phát Wi-Fi",
+        numb: 54,
+        question: "Để kết nối với nhà cung cấp dịch vụ Intenet, người ta dùng thiết bị mạng?",
+        answer: "Dùng Router có chức năng mạng Wifi",
         options: [
             "Hub",
             "Switch không có chức năng định tuyến",
             "Modem chỉ có 1 cổng LAN",
-            "Router có chức năng phát Wi-Fi"
+            "Dùng Router có chức năng mạng Wifi"
         ]
     },
     {
-        numb: 58,
-        question: "Tại sao các máy tính trong mạng LAN thường không dùng trực tiếp địa chỉ IP công cộng để truy cập Internet?",
-        answer: "Vì không gian địa chỉ IP công cộng (IPv4) có hạn và để tăng cường bảo mật",
+        numb: 55,
+        question: "Hiện nay nhiều máy tính kết nối Internet(có địa chỉ chính danh Internet) mà phải nhờ một hệ thống máy tính đại diện?",
+        answer: "Vì do không gian địa chỉ internet là hữu hạn",
         options: [
             "Vì IP công cộng có tốc độ chậm hơn",
             "Vì IP công cộng không an toàn",
-            "Vì IP công cộng phải trả phí rất cao cho mỗi máy",
-            "Vì không gian địa chỉ IP công cộng (IPv4) có hạn và để tăng cường bảo mật"
+            "Vì do không gian địa chỉ internet là hữu hạn",
+            "Vì IP công cộng phải trả phí rất cao cho mỗi máy"
         ]
     },
     {
-        numb: 59,
-        question: "Kỹ thuật nào cho phép nhiều máy tính trong mạng LAN sử dụng chung một địa chỉ IP công cộng để truy cập Internet?",
-        answer: "NAT (Network Address Translation)",
+        numb: 56,
+        question: "Do không gian của địa chỉ internet vô hạn?",
+        answer: "NAT (Network Address Translation)", // Sửa lại đáp án cho phù hợp với câu hỏi có thể bị lỗi cú pháp
         options: [
             "NAT (Network Address Translation)",
             "DHCP",
             "DNS",
-            "VLAN"
+            "Thông qua các tập tin từ Internet. Sao chép dữ liệu từ USB"
         ]
     },
     {
-        numb: 60,
-        question: "Chức năng của một Proxy Server là gì?",
-        answer: "Làm trung gian, thay mặt người dùng truy cập đến các máy chủ khác",
+        numb: 57,
+        question: "Cho biết chức năng của một dịch proxy trên server?",
+        answer: "Dịch vụ bảo mật cho server và máy khách",
         options: [
             "Cấp phát địa chỉ IP",
-            "Làm trung gian, thay mặt người dùng truy cập đến các máy chủ khác",
+            "Dịch vụ bảo mật cho server và máy khách",
             "Lưu trữ website",
             "Dịch tên miền thành IP"
         ]
     },
     {
-        numb: 61,
-        question: "Trong các mạng dùng topo dạng Bus, thiết bị ở hai đầu cáp để chống dội tín hiệu được gọi là gì?",
-        answer: "Terminator",
+        numb: 58,
+        question: "Trạng thái của mạng dạng BUS sẽ thế nào nếu không có terminator?",
+        answer: "Mạng không hoạt động được",
         options: [
             "Router",
             "Repeater",
-            "Terminator",
+            "Mạng không hoạt động được",
             "Connector"
         ]
     },
     {
-        numb: 62,
-        question: "Giao thức nào cho phép các Router tự động chia sẻ thông tin định tuyến với nhau?",
+        numb: 59,
+        question: "Giao thức cho phép Router chia sẻ với nhau?",
         answer: "RIP (Routing Information Protocol)",
         options: [
             "FTP (File Transfer Protocol)",
@@ -685,107 +652,85 @@ const questions = [
         ]
     },
     {
-        numb: 63,
-        question: "Trong các mạng không dây, thiết bị nào đóng vai trò trung tâm để các máy khách kết nối vào?",
-        answer: "Access Point (AP)",
-        options: [
-            "Card mạng không dây",
-            "Access Point (AP)",
-            "Repeater",
-            "Switch"
-        ]
-    },
-    {
-        numb: 64,
-        question: "Câu này bị bỏ trống trong ghi chú.",
-        answer: "N/A",
-        options: [
-            "A",
-            "B",
-            "C",
-            "N/A"
-        ]
-    },
-    {
-        numb: 65,
-        question: "Trong cấu hình router, 'default gateway' hoặc 'default route' được dùng để làm gì?",
-        answer: "Chỉ đường đi cho các gói tin không có trong bảng định tuyến",
+        numb: 60,
+        question: "Phần nào trong địa chỉ IP được router sử dụng tìm được đường đi?",
+        answer: "host address", // Câu hỏi và đáp án này có thể cần làm rõ hơn, router dùng phần network address để định tuyến.
         options: [
             "Đặt địa chỉ IP cho router",
             "Đặt tên cho router",
-            "Chỉ đường đi cho các gói tin không có trong bảng định tuyến",
+            "host address",
             "Cấu hình mật khẩu"
         ]
     },
     {
-        numb: 66,
-        question: "Trên thiết bị Cisco, lệnh nào dùng để vào chế độ cấu hình cho một giao diện VLAN?",
-        answer: "interface vlan [số vlan]",
+        numb: 61,
+        question: "Lệnh cấu hình giao diện Vlan?",
+        answer: "Interface Vlan",
         options: [
             "vlan [số vlan]",
             "configure vlan [số vlan]",
-            "interface vlan [số vlan]",
+            "Interface Vlan",
             "ip address vlan [số vlan]"
         ]
     },
     {
-        numb: 67,
-        question: "Lệnh nào dùng để cấu hình địa chỉ IP cho một giao diện trên router Cisco?",
-        answer: "ip address [địa chỉ IP] [subnet mask]",
+        numb: 62,
+        question: "Lệnh cấu hình địa chỉ IP?",
+        answer: "ip address",
         options: [
-            "ip address [địa chỉ IP] [subnet mask]",
-            "set ip [địa chỉ IP] [subnet mask]",
-            "interface ip [địa chỉ IP] [subnet mask]",
-            "address is [địa chỉ IP] [subnet mask]"
+            "ip address",
+            "set ip",
+            "interface ip",
+            "address is"
         ]
     },
     {
-        numb: 68,
-        question: "Lệnh nào dùng để cấu hình một thông điệp (banner) hiển thị khi người dùng đăng nhập vào thiết bị?",
-        answer: "banner motd",
+        numb: 63,
+        question: "Lệnh cấu hình banner login cho thiết bị mạng?",
+        answer: "banner login",
         options: [
             "login message",
             "display text",
-            "banner motd",
+            "banner login",
             "set welcome"
         ]
     },
     {
-        numb: 69,
-        question: "Lệnh nào dùng để truy cập từ xa vào một thiết bị mạng khác thông qua giao thức telnet?",
-        answer: "telnet [địa chỉ IP]",
+        numb: 64,
+        question: "Lệnh truy cập từ xa vào thiết bị mạng telnet?",
+        answer: "telnet",
         options: [
             "connect [địa chỉ IP]",
             "remote [địa chỉ IP]",
-            "telnet [địa chỉ IP]",
+            "telnet",
             "ssh [địa chỉ IP]"
         ]
     },
     {
-        numb: 70,
-        question: "Để lưu cấu hình đang chạy (running-config) vào cấu hình khởi động (startup-config) trên router Cisco, ta dùng lệnh nào?",
-        answer: "copy running-config startup-config",
+        numb: 65,
+        question: "Lệnh xóa, khôi phục cấu hình ở startup config?",
+        answer: "copy running-config startup-config, Reload",
         options: [
             "save running-config",
             "write memory",
-            "copy running-config startup-config",
+            "copy running-config startup-config, Reload",
             "reload"
         ]
     },
     {
-        numb: 71,
-        question: "Ai là người đã khởi xướng và tạo ra nhân (kernel) của hệ điều hành Linux?",
-        answer: "Linus Torvalds",
+        numb: 66,
+        question: "Tác giả Linux?",
+        answer: "Linus Tolvards",
         options: [
             "Bill Gates",
             "Steve Jobs",
             "Richard Stallman",
-            "Linus Torvalds"
+            "Linus Tolvards"
         ]
     },
     {
-        numb: 72,
-        question: "Trong trình soạn thảo 'vi' của Linux, để chuyển từ chế độ chèn (Insert Mode) về chế độ lệnh (Command Mode), bạn nhấn phím nào?",
+        numb: 67,
+        question: "Soạn thảo vi trong hệ điều hành Linux để chuyển về chế độ lệnh ta nhấn?",
         answer: "ESC",
         options: [
             "Enter",
@@ -795,8 +740,8 @@ const questions = [
         ]
     },
     {
-        numb: 73,
-        question: "Trong trình soạn thảo 'vi' (chế độ lệnh), lệnh nào dùng để ghi lại thay đổi và thoát?",
+        numb: 68,
+        question: "Soạn thảo vi trong hệ điều hành Linux lệnh ghi và thoát?",
         answer: ":wq",
         options: [
             ":q!",
@@ -806,289 +751,355 @@ const questions = [
         ]
     },
     {
-        numb: 74,
-        question: "Trong Linux, lệnh nào dùng để liệt kê các file và thư mục trong thư mục hiện tại?",
-        answer: "ls",
+        numb: 69,
+        question: "Trong Linux, lệnh nào dùng để liệt kê các file trong thư mục hiện tại?",
+        answer: "Lệnh ls",
         options: [
             "dir",
             "list",
-            "ls",
+            "Lệnh ls",
             "show"
         ]
     },
     {
-        numb: 75,
-        question: "Phần cốt lõi của hệ điều hành Linux, quản lý tài nguyên phần cứng, được gọi là gì?",
-        answer: "Kernel (Nhân)",
-        options: [
-            "Shell (Trình bao)",
-            "Kernel (Nhân)",
-            "GUI (Giao diện đồ họa)",
-            "Bootloader"
-        ]
-    },
-    {
-        numb: 76,
-        question: "Công cụ nào sau đây là một trình soạn thảo văn bản hoạt động ở chế độ dòng lệnh (không có giao diện đồ họa) trong Linux?",
-        answer: "vi / vim",
-        options: [
-            "Gedit",
-            "LibreOffice Writer",
-            "vi / vim",
-            "Visual Studio Code"
-        ]
-    },
-    {
-        numb: 77,
-        question: "Giao thức nào sau đây cho phép đăng nhập từ xa vào một máy khác qua mạng một cách an toàn (mã hóa)?",
-        answer: "ssh",
-        options: [
-            "telnet",
-            "ftp",
-            "ssh",
-            "http"
-        ]
-    },
-    {
-        numb: 78,
-        question: "SSH trong Linux là viết tắt của?",
-        answer: "Secure Shell",
-        options: [
-            "System Shell",
-            "Secure Shell",
-            "Superuser Shell",
-            "Simple Socket Host"
-        ]
-    },
-    {
-        numb: 79,
-        question: "Địa chỉ IP 127.0.0.1 được gọi là gì và dùng để làm gì?",
-        answer: "Địa chỉ loopback, dùng để kiểm tra chính máy tính đó",
+        numb: 70,
+        question: "Địa chỉ ip nào sau đây là địa chỉ Loopback?",
+        answer: "127.0.0.1",
         options: [
             "Địa chỉ broadcast, gửi gói tin đến tất cả các máy",
             "Địa chỉ gateway, để đi ra ngoài mạng",
-            "Địa chỉ loopback, dùng để kiểm tra chính máy tính đó",
+            "127.0.0.1",
             "Địa chỉ DNS server"
         ]
     },
     {
-        numb: 80,
-        question: "Trong mô hình TCP/IP, quá trình thêm thông tin điều khiển (header) vào dữ liệu ở mỗi tầng được gọi là gì?",
-        answer: "Đóng gói (Encapsulation)",
-        options: [
-            "Nén (Compression)",
-            "Đóng gói (Encapsulation)",
-            "Phân mảnh (Fragmentation)",
-            "Mã hóa (Encryption)"
-        ]
-    },
-    {
-        numb: 81,
-        question: "Thiết bị hoặc phần mềm nào được đặt giữa mạng nội bộ và Internet để bảo vệ, chống lại các truy cập trái phép?",
-        answer: "Firewall (Tường lửa)",
+        numb: 71,
+        question: "Phương pháp nào dùng để chặn xâm nhập và lọc bỏ các gói tin trong hệ thống mạng?",
+        answer: "Firewall",
         options: [
             "Router",
             "Switch",
-            "Firewall (Tường lửa)",
+            "Firewall",
             "Hub"
         ]
     },
     {
-        numb: 82,
-        question: "Một card mạng có thể đồng thời gửi và nhận dữ liệu được gọi là hoạt động ở chế độ nào?",
-        answer: "Full-duplex",
-        options: [
-            "Simplex",
-            "Half-duplex",
-            "Full-duplex",
-            "Multi-duplex"
-        ]
-    },
-    {
-        numb: 83,
-        question: "Đặc điểm chính của giao thức dạng Connectionless (phi kết nối) là gì?",
-        answer: "Không thiết lập kết nối trước khi gửi, không đảm bảo tin cậy",
+        numb: 72,
+        question: "Điều gì là đúng với các giao thức dạng Connectionless(không kết nối) khi trao đổi trên hệ thống máy tính?",
+        answer: "Cung cấp một dịch vụ cấp phát dữ liệu không đáng tin cậy",
         options: [
             "Phải thực hiện bắt tay ba bước trước khi gửi",
             "Đảm bảo mọi gói tin đến đúng thứ tự",
-            "Không thiết lập kết nối trước khi gửi, không đảm bảo tin cậy",
+            "Cung cấp một dịch vụ cấp phát dữ liệu không đáng tin cậy",
             "Tốc độ chậm nhưng rất ổn định"
         ]
     },
     {
-        numb: 84,
-        question: "Phương thức truyền dữ liệu trong đó dữ liệu được chia thành các gói tin nhỏ hơn để gửi đi được gọi là gì?",
-        answer: "Chuyển mạch gói (Packet Switching)",
+        numb: 73,
+        question: "Dịch vụ chuyển gói tin nào sau đây tích hợp các kỹ thuật số trong bảo mật dữ liệu trên mạng máy tính?",
+        answer: "Chuyển mạch kênh và chuyển mạch gói",
         options: [
             "Chuyển mạch kênh (Circuit Switching)",
-            "Chuyển mạch gói (Packet Switching)",
+            "Chuyển mạch kênh và chuyển mạch gói",
             "Broadcasting",
             "Streaming"
         ]
     },
     {
-        numb: 85,
-        question: "Để đảm bảo tính toàn vẹn của dữ liệu (dữ liệu không bị thay đổi khi truyền), người ta thường sử dụng kỹ thuật nào?",
-        answer: "Hàm băm (Hashing) và checksum",
+        numb: 74,
+        question: "Khi cần truyền một thông điệp và dùng 2 dịch vụ bí mật và xác thực gói tin, thì phần nào sẽ được mã hóa bằng khóa phiên?",
+        answer: "Thông điệp và chữ ký số trên thông điệp",
         options: [
             "Mã hóa (Encryption)",
             "Nén dữ liệu (Compression)",
-            "Hàm băm (Hashing) và checksum",
+            "Thông điệp và chữ ký số trên thông điệp",
             "Phân quyền (Authorization)"
         ]
     },
     {
-        numb: 86,
-        question: "Hình thức tấn công mạng trong đó kẻ tấn công giả mạo thành một thực thể đáng tin cậy được gọi là gì?",
-        answer: "Tấn công giả mạo (Spoofing)",
+        numb: 75,
+        question: "Xác định cách tấn công chủ động vào hệ thống mạng máy tính?",
+        answer: "Tấn công giả mạo",
         options: [
             "Tấn công từ chối dịch vụ (DoS)",
-            "Tấn công giả mạo (Spoofing)",
+            "Tấn công giả mạo",
             "Tấn công nghe lén (Eavesdropping)",
             "Tấn công bằng mã độc (Malware)"
         ]
     },
     {
-        numb: 87,
-        question: "Để phòng chống tấn công từ chối dịch vụ (DoS), biện pháp nào sau đây là hiệu quả?",
-        answer: "Sử dụng Firewall và hệ thống phát hiện xâm nhập (IDS/IPS)",
+        numb: 76,
+        question: "Lựa chọn cách phòng chống tấn công từ chối dịch vụ (DoS)?",
+        answer: "Lưu trữ và backup dữ liệu",
         options: [
             "Đổi mật khẩu thường xuyên",
             "Cài phần mềm diệt virus",
-            "Sử dụng Firewall và hệ thống phát hiện xâm nhập (IDS/IPS)",
+            "Lưu trữ và backup dữ liệu",
             "Không truy cập các trang web lạ"
         ]
     },
     {
-        numb: 88,
-        question: "So với thư tín truyền thống, thư điện tử có đặc điểm nổi bật nào?",
-        answer: "Tốc độ nhanh và có thể gửi đồng thời cho nhiều người",
+        numb: 77,
+        question: "Thứ điện tử có đặc điểm gì so với thư truyền thống?",
+        answer: "Có thể gửi đồng thời nhiều người",
         options: [
             "Bảo mật hơn",
             "Phải viết tay",
-            "Tốc độ nhanh và có thể gửi đồng thời cho nhiều người",
+            "Có thể gửi đồng thời nhiều người",
             "Luôn miễn phí"
         ]
     },
     {
-        numb: 89,
-        question: "Kỹ thuật nào được dùng để bảo mật thông tin trên hệ thống mạng bằng cách che giấu địa chỉ IP thật của mạng nội bộ?",
-        answer: "NAT (Network Address Translation)",
+        numb: 78,
+        question: "Phương thức nào sau đây bảo mật thông tin trên hệ thống mạng?",
+        answer: "Firewall", // Firewall là phương án đúng và phổ biến nhất. NAT cũng là một cơ chế nhưng chức năng chính là biên dịch địa chỉ.
         options: [
             "VLAN",
             "Subnetting",
-            "NAT (Network Address Translation)",
+            "NAT - Network Address Translation",
             "Firewall"
         ]
     },
     {
-        numb: 90,
-        question: "Cơ chế nào dùng để ánh xạ một tên gọi (hostname) thành một địa chỉ IP?",
-        answer: "DNS",
-        options: [
-            "DHCP",
-            "ARP",
-            "DNS",
-            "NAT"
-        ]
-    },
-    {
-        numb: 91,
-        question: "Ngôn ngữ nào là công cụ cơ bản để tạo cấu trúc và soạn thảo nội dung cho các trang web?",
-        answer: "HTML",
-        options: [
-            "Java",
-            "Python",
-            "C++",
-            "HTML"
-        ]
-    },
-    {
-        numb: 92,
-        question: "Trong một bản ghi DNS, loại bản ghi nào chỉ định máy chủ tên miền cho một tên miền?",
-        answer: "NS (Name Server)",
+        numb: 79,
+        question: "Trên máy chủ có một bản ghi dịch vụ DNS (Vnvc.edu.vn, 125.6.5.7.NS). Hãy chọn câu trả lời đúng?",
+        answer: "vsvc.edu.vn là tên miền chứ không phải một máy chủ",
         options: [
             "A (Address)",
             "CNAME (Canonical Name)",
             "MX (Mail Exchange)",
-            "NS (Name Server)"
+            "vsvc.edu.vn là tên miền chứ không phải một máy chủ"
         ]
     },
     {
-        numb: 93,
-        question: "Khi bạn có thể truy cập website bằng địa chỉ IP nhưng không thể truy cập bằng tên miền, nguyên nhân có khả năng cao nhất là gì?",
-        answer: "Lỗi DNS Server",
+        numb: 80,
+        question: "Tất cả các thuê bao fpt truy cập vào google.com chuyển hướng sang một web khác. các máy tính khác trong hệ thống không gặp tình trạng này. Nguyên nhân gây ra lỗi lớn nhất là?",
+        answer: "DNS Server FPT bị lỗi",
         options: [
             "Lỗi cáp mạng",
             "Lỗi card mạng",
-            "Lỗi DNS Server",
+            "DNS Server FPT bị lỗi",
             "Hết dung lượng ổ cứng"
         ]
     },
     {
-        numb: 94,
-        question: "Khi gói tin từ web server bị lỗi trên đường truyền và không đến được máy khách, giao thức TCP sẽ làm gì?",
-        answer: "Yêu cầu gửi lại gói tin bị lỗi",
+        numb: 81,
+        question: "Khi người dùng truy cập intenet thành công và xuất hiện 404, nguyên nhân là?",
+        answer: "Đối tượng Client không có",
         options: [
             "Bỏ qua gói tin đó",
             "Yêu cầu gửi lại toàn bộ trang web",
-            "Yêu cầu gửi lại gói tin bị lỗi",
+            "Đối tượng Client không có",
             "Hiển thị thông báo lỗi cho người dùng ngay lập tức"
         ]
     },
     {
-        numb: 95,
-        question: "Mạng chuyển mạch gói có đặc điểm gì?",
-        answer: "Tài nguyên mạng được chia sẻ, hiệu quả hơn chuyển mạch kênh",
+        numb: 82,
+        question: "Khẳng định nào sau đây là đúng khi nói về mạng mạch chuyển đổi gói?",
+        answer: "Gói tin lưu chuyển trên các kết nối logic hướng đích và trên một đường có thể có nhiều gói tin cùng lưu chuyển",
         options: [
             "Thiết lập một kênh riêng cho mỗi kết nối",
             "Tài nguyên mạng được chia sẻ, hiệu quả hơn chuyển mạch kênh",
             "Tất cả các gói tin phải đi theo cùng một con đường",
-            "Không phù hợp cho lưu lượng truy cập không đều"
+            "Gói tin lưu chuyển trên các kết nối logic hướng đích và trên một đường có thể có nhiều gói tin cùng lưu chuyển"
         ]
     },
     {
-        numb: 96,
-        question: "Đại lượng nào đo lường sự suy giảm cường độ tín hiệu khi nó được truyền đi trên mạng?",
-        answer: "Suy hao (Attenuation)",
+        numb: 83,
+        question: "hãy xác định hệ số suy hao của hệ thống mạng?",
+        answer: "Độ suy yếu của tín hiệu đường truyền",
         options: [
             "Băng thông (Bandwidth)",
             "Độ trễ (Latency)",
-            "Suy hao (Attenuation)",
+            "Độ suy yếu của tín hiệu đường truyền",
             "Nhiễu (Noise)"
         ]
     },
     {
-        numb: 97,
-        question: "Để đảm bảo các gói tin đến đúng thứ tự, giao thức TCP sử dụng thông tin gì?",
-        answer: "Số thứ tự (Sequence Number)",
+        numb: 84,
+        question: "Chức năng của giao thức IP trong mô hình mạng là?",
+        answer: "Định nghĩa cơ chế địa chỉ trong mạng Internet.",
         options: [
-            "Số hiệu cổng (Port Number)",
-            "Địa chỉ IP",
-            "Số thứ tự (Sequence Number)",
-            "Checksum"
+            "Mã hóa dữ liệu truyền đi",
+            "Định nghĩa cơ chế địa chỉ trong mạng Internet.",
+            "Kiểm soát truy cập người dùng",
+            "Tăng tốc độ truyền dữ liệu"
+        ]
+    },
+    {
+        numb: 85,
+        question: "Những chương trình sau đây là chương trình duyệt web?",
+        answer: "Internet Explorer, Firefox, Chrome.",
+        options: [
+            "Microsoft Word, Excel, PowerPoint.",
+            "Internet Explorer, Firefox, Chrome.",
+            "Zalo, Skype, Teams.",
+            "Notepad, Paint, Calculator."
+        ]
+    },
+    {
+        numb: 86,
+        question: "Máy tính dùng internet, sử dụng liên kết hyper link sẽ cho phép người dùng liên kết?",
+        answer: "Tất cả các tệp tin, các slide có trong máy và các trang web.",
+        options: [
+            "Chỉ các trang web.",
+            "Chỉ các tệp tin văn bản.",
+            "Tất cả các tệp tin, các slide có trong máy và các trang web.",
+            "Chỉ các slide trình chiếu."
+        ]
+    },
+    {
+        numb: 87,
+        question: "Để tìm kiếm các trang web liên quan lĩnh vực đào tạo quản trị mạng, ta dùng từ khóa?",
+        answer: "Đào tạo quản trị mạng",
+        options: [
+            "Tin học văn phòng",
+            "Đào tạo quản trị mạng",
+            "Thiết kế đồ họa",
+            "Lập trình web"
+        ]
+    },
+    {
+        numb: 88,
+        question: "Virus máy tính có đặc điểm gì?",
+        answer: "Những chương trình được viết ra với mục đích không tốt.",
+        options: [
+            "Chỉ dùng để bảo vệ máy tính.",
+            "Những chương trình được viết ra với mục đích không tốt.",
+            "Tăng tốc độ máy tính.",
+            "Tối ưu hóa hệ điều hành."
+        ]
+    },
+    {
+        numb: 89,
+        question: "Hacker viết ra các chương trình virus nhằm mục đích?",
+        answer: "Đánh cắp thông tin dữ liệu của nhóm hoặc tổ chức.",
+        options: [
+            "Tăng tốc độ mạng.",
+            "Đánh cắp thông tin dữ liệu của nhóm hoặc tổ chức.",
+            "Cải thiện bảo mật hệ thống.",
+            "Tối ưu hóa phần mềm."
+        ]
+    },
+    {
+        numb: 90,
+        question: "Lệnh nào để xem cấu hình hiện tại của thiết bị?",
+        answer: "show running-config",
+        options: [
+            "ipconfig",
+            "show running-config",
+            "ping",
+            "netstat"
+        ]
+    },
+    {
+        numb: 91,
+        question: "Phiên bản kernel của hệ điều hành linux có gì đặc biệt so với các bản trước?",
+        answer: "Số chẵn và số lẻ là bản thử nghiệm.",
+        options: [
+            "Chỉ có số lẻ là bản chính thức.",
+            "Số chẵn và số lẻ là bản thử nghiệm.",
+            "Không có sự khác biệt.",
+            "Chỉ có số chẵn là bản thử nghiệm."
+        ]
+    },
+    {
+        numb: 92,
+        question: "Trong hệ điều hành linux, trình soạn thảo nào sau đây không sử dụng đồ họa khi soạn thảo chương trình?",
+        answer: "vi",
+        options: [
+            "gedit",
+            "vi",
+            "libreoffice writer",
+            "sublime text"
+        ]
+    },
+    {
+        numb: 93,
+        question: "Lệnh nào để login từ xa qua mạng một máy linux?",
+        answer: "telnet, ssh và rlogin.",
+        options: [
+            "ftp",
+            "telnet, ssh và rlogin.",
+            "scp",
+            "curl"
+        ]
+    },
+    {
+        numb: 94,
+        question: "Dịch vụ ssh trong hệ điều hành linux là gì?",
+        answer: "Secure shell.",
+        options: [
+            "Simple shell.",
+            "Secure shell.",
+            "Superuser shell.",
+            "System shell."
+        ]
+    },
+    {
+        numb: 95,
+        question: "Dữ liệu truyền từ máy tính A sang máy tính B phải trải qua quá trình nào sau đây?",
+        answer: "Nén và đóng gói dữ liệu.",
+        options: [
+            "Chỉ mã hóa dữ liệu.",
+            "Nén và đóng gói dữ liệu.",
+            "Chỉ kiểm tra lỗi.",
+            "Chỉ phân mảnh dữ liệu."
+        ]
+    },
+    {
+        numb: 96,
+        question: "Phương thức nào mà cả 2 bên đều có thể sử dụng đồng thời gửi dữ liệu trên hệ thống mạng máy tính?",
+        answer: "Full-duplex.",
+        options: [
+            "Simplex.",
+            "Half-duplex.",
+            "Full-duplex.",
+            "Broadcast."
+        ]
+    },
+    {
+        numb: 97,
+        question: "Khẳng định nào sau đây là đúng khi nói về ngôn ngữ đánh dấu văn bản HTML?",
+        answer: "Là công cụ soạn thảo trang thông tin web.",
+        options: [
+            "Chỉ dùng để lập trình ứng dụng di động.",
+            "Là công cụ soạn thảo trang thông tin web.",
+            "Chỉ dùng để tạo bảng tính.",
+            "Chỉ dùng để thiết kế đồ họa."
         ]
     },
     {
         numb: 98,
-        question: "Hiện tượng xảy ra khi lượng dữ liệu gửi đến một thiết bị mạng vượt quá khả năng xử lý của nó được gọi là gì?",
-        answer: "Nghẽn mạng (Congestion)",
+        question: "Khẳng định nào sau đây là đúng khi nói về tên gọi của loại máy chủ cung cấp thư điện tử?",
+        answer: "Mail Server.",
         options: [
-            "Xung đột (Collision)",
-            "Nghẽn mạng (Congestion)",
-            "Suy hao (Attenuation)",
-            "Độ trễ (Jitter)"
+            "Web Server.",
+            "Mail Server.",
+            "File Server.",
+            "Print Server."
         ]
     },
     {
         numb: 99,
-        question: "Chức năng của tầng Trình diễn (Presentation) trong mô hình OSI là gì?",
-        answer: "Đảm bảo dữ liệu từ tầng Ứng dụng của một hệ thống có thể đọc được bởi tầng Ứng dụng của hệ thống khác",
+        question: "Hãy xác định độ nhiễu điện từ trong quá trình trao đổi gói tin hệ thống mạng.",
+        answer: "Độ suy yếu của tín hiệu đường truyền.",
         options: [
-            "Khởi tạo, quản lý, kết thúc phiên làm việc",
-            "Cung cấp dịch vụ truyền file",
-            "Đảm bảo dữ liệu từ tầng Ứng dụng của một hệ thống có thể đọc được bởi tầng Ứng dụng của hệ thống khác",
-            "Xác định đường đi tốt nhất cho gói tin"
+            "Tăng tốc độ truyền dữ liệu.",
+            "Độ suy yếu của tín hiệu đường truyền.",
+            "Tăng băng thông.",
+            "Giảm độ trễ."
+        ]
+    },
+    {
+        numb: 100,
+        question: "Chức năng của tầng trình diễn là?",
+        answer: "Chuyển đổi ngôn ngữ người sử dụng về ngôn ngữ hệ thống mạng.",
+        options: [
+            "Kiểm soát truy cập người dùng.",
+            "Chuyển đổi ngôn ngữ người sử dụng về ngôn ngữ hệ thống mạng.",
+            "Mã hóa dữ liệu truyền đi.",
+            "Định tuyến gói tin."
         ]
     }
 ];
