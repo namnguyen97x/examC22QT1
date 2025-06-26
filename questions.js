@@ -1,6 +1,3 @@
-// questions.js
-// Bộ câu hỏi trắc nghiệm về Mạng máy tính & Linux
-
 const questions = [
     {
         numb: 1,
@@ -115,11 +112,11 @@ const questions = [
     {
         numb: 11,
         question: "Những ưu điểm sau, ưu điểm nào không phải của mạng không dây?",
-        answer: "Bảo mật tuyệt đối", // Sửa lại câu trả lời cho hợp lý hơn
+        answer: "Không cần dây cáp", 
         options: [
             "Không cần dây cáp",
             "Bảo mật tuyệt đối",
-            "Tốc độ luôn cao hơn mạng có dây",
+            "Tốc độ cao như mạng có dây",
             "Không bao giờ bị nhiễu sóng"
         ]
     },
