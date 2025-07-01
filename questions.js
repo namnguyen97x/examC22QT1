@@ -607,7 +607,7 @@ const questions = [
     {
         numb: 56,
         question: "Do không gian của địa chỉ internet vô hạn?",
-        answer: "NAT (Network Address Translation)",
+        answer: "Thông qua các tập tin từ Internet. Sao chép dữ liệu từ USB",
         options: [
             "NAT (Network Address Translation)",
             "DHCP",
@@ -706,7 +706,7 @@ const questions = [
     {
         numb: 65,
         question: "Lệnh nào sau đây dùng để lưu và khôi phục thiết bị mạng?",
-        answer: "copy running-config startup-config, Reload",
+        answer: "copy running-config startup-config, reload",
         options: [
             "save running-config",
             "write memory",
@@ -848,11 +848,11 @@ const questions = [
     },
     {
         numb: 78,
-        question: "Phương thức nào sau đây bảo mật thông tin trên hệ thống mạng?",
+        question: "Phương thức nào sau đây dùng để bảo mật thông tin trên hệ thống mạng?",
         answer: "Firewall",
         options: [
             "VLAN",
-            "Firewall",
+            "Kỹ thuật NAT (Network Address Translation)",
             "DHCP",
             "DNS"
         ]
