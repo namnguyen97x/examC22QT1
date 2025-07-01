@@ -849,7 +849,7 @@ const questions = [
     {
         numb: 78,
         question: "Phương thức nào sau đây dùng để bảo mật thông tin trên hệ thống mạng?",
-        answer: "Firewall",
+        answer: "Kỹ thuật NAT (Network Address Translation)",
         options: [
             "VLAN",
             "Kỹ thuật NAT (Network Address Translation)",
