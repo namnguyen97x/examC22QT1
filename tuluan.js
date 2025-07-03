@@ -10,6 +10,13 @@ const essaySection = document.getElementById('essay-section');
 const homeScreen = document.getElementById('home-screen');
 
 let essayQuestions = [];
+let currentDifficulty = 'medium'; // default
+const DIFFICULTY_MAP = {
+    easy: 0.4,
+    medium: 0.6,
+    hard: 0.8,
+    master: 1
+};
 
 // Parse cauhoi.txt to extract questions and answers
 async function loadEssayQuestions() {
@@ -50,6 +57,29 @@ function showModePopup() {
         if (result.isConfirmed) {
             renderReviewMode();
         } else if (result.isDenied) {
+            showDifficultyPopup();
+        }
+    });
+}
+
+function showDifficultyPopup() {
+    Swal.fire({
+        title: 'Chọn mức độ khó',
+        input: 'radio',
+        inputOptions: {
+            easy: 'Dễ (khuyết 40%)',
+            medium: 'Trung bình (60%)',
+            hard: 'Khó (80%)',
+            master: 'Bậc thầy (chỉ còn 1 ô)'
+        },
+        inputValue: 'medium',
+        confirmButtonText: 'Bắt đầu',
+        cancelButtonText: 'Huỷ',
+        showCancelButton: true,
+        allowOutsideClick: false
+    }).then((result) => {
+        if (result.isConfirmed) {
+            currentDifficulty = result.value || 'medium';
             renderPracticeMode();
         }
     });
@@ -91,9 +121,16 @@ function renderEssayQuestion() {
     const blanks = blanksMap[currentEssay];
     essaySection.style.opacity = 0;
     setTimeout(() => {
+        // Dropdown chọn câu hỏi
+        const dropdown = `<select id="essay-q-jump" class="essay-q-jump" style="margin-bottom:10px; margin-right:8px; padding:4px 10px; border-radius:6px; font-size:1em;">
+            ${essayQuestions.map((q, i) => `<option value="${i}" ${i===currentEssay?'selected':''}>Câu ${q.numb}: ${q.question.slice(0, 32).replace(/\n/g, ' ')}${q.question.length>32?'...':''}</option>`).join('')}
+        </select>`;
         essaySection.innerHTML = `
             <h2>📝 Làm bài tự luận</h2>
-            <div class="essay-q"><b>Câu ${q.numb}:</b> ${q.question}</div>
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+                ${dropdown}
+                <span style="font-size:1.08em;"><b>Câu ${q.numb}:</b> ${q.question}</span>
+            </div>
             <form id="essay-form">
                 <div class="essay-a">${renderBlanks(q.answer, blanks, userEssayAnswers[currentEssay])}</div>
                 <div style="margin-top:16px;">
@@ -109,33 +146,44 @@ function renderEssayQuestion() {
         document.getElementById('essay-next-btn').onclick = () => { currentEssay++; renderEssayQuestion(); };
         document.getElementById('essay-back-btn').onclick = hideEssaySection;
         document.getElementById('essay-form').onsubmit = onEssaySubmit;
-        // Hiệu ứng fade in
+        // Sự kiện chọn nhanh câu hỏi
+        document.getElementById('essay-q-jump').onchange = (e) => {
+            currentEssay = +e.target.value;
+            renderEssayQuestion();
+        };
         essaySection.scrollIntoView({behavior:'smooth'});
         setTimeout(()=>{ essaySection.style.opacity = 1; }, 60);
-        // Focus input đầu tiên
         const firstInput = essaySection.querySelector('.essay-blank');
         if(firstInput) firstInput.focus();
+        bindMicEvents();
     }, 120);
 }
 
 // Random các từ/cụm từ để tạo chỗ trống (blank)
 function randomBlanks(answer) {
     const words = answer.split(/\s+/);
-    let idxs = [];
-    let nBlanks = Math.max(1, Math.floor(words.length * 0.6));
-    // Không khuyết toàn bộ, giữ lại từ đầu/cuối nếu đoạn ngắn
+    if (currentDifficulty === 'master') {
+        // Chỉ còn 1 ô nhập toàn bộ đáp án
+        return words.length > 1 ? [0, ...Array(words.length-1).fill(-1)] : [0];
+    }
+    let nBlanks = Math.max(1, Math.floor(words.length * (DIFFICULTY_MAP[currentDifficulty] || 0.6)));
     let candidates = words.map((w, i) => i).filter(i => words.length <= 4 ? true : (i !== 0 && i !== words.length-1));
     // Trộn ngẫu nhiên
     for (let i = candidates.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
     }
-    idxs = candidates.slice(0, nBlanks).sort((a,b)=>a-b);
+    let idxs = candidates.slice(0, nBlanks).sort((a,b)=>a-b);
     return idxs;
 }
 
 function renderBlanks(answer, blanks, userInput) {
     const words = answer.split(/\s+/);
+    if (currentDifficulty === 'master') {
+        // Chỉ còn 1 ô nhập toàn bộ đáp án
+        const val = userInput && userInput[0] ? userInput[0] : '';
+        return `<input type="text" class="essay-blank" data-blank="0" value="${val}" style="width:90%; min-width:120px; margin:0 2px;">`;
+    }
     let html = '';
     let inputIdx = 0;
     for (let i = 0; i < words.length; i++) {
@@ -153,7 +201,27 @@ function renderBlanks(answer, blanks, userInput) {
 function onEssaySubmit(e) {
     e.preventDefault();
     const blanks = blanksMap[currentEssay];
-    const inputs = Array.from(essaySection.querySelectorAll('.essay-blank')).map(i => i.value.trim());
+    let inputs;
+    if (currentDifficulty === 'master') {
+        inputs = [essaySection.querySelector('.essay-blank').value.trim()];
+        userEssayAnswers[currentEssay] = inputs;
+        const answer = essayQuestions[currentEssay].answer;
+        const userVal = inputs[0] || '';
+        let html = '';
+        if (normalizeString(userVal) === normalizeString(answer)) {
+            html = `<span class="essay-correct">${userVal}</span>`;
+        } else {
+            html = `<span class="essay-wrong">${userVal||'___'}</span> <span class="essay-correct">[${answer}]</span>`;
+        }
+        const feedback = essaySection.querySelector('#essay-feedback');
+        feedback.style.opacity = 0;
+        setTimeout(()=>{
+            feedback.innerHTML = `<div>${normalizeString(userVal) === normalizeString(answer) ? 'Chính xác!' : 'Chưa đúng.'}</div><div>${html}</div>`;
+            feedback.style.opacity = 1;
+        }, 120);
+        return;
+    }
+    inputs = Array.from(essaySection.querySelectorAll('.essay-blank')).map(i => i.value.trim());
     userEssayAnswers[currentEssay] = inputs;
     const answerWords = essayQuestions[currentEssay].answer.split(/\s+/);
     let html = '';

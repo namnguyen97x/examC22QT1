@@ -64,7 +64,7 @@
     * **Bước 4:** Chọn file đính kèm trong gmail -> Open.
     * **Bước 5:** Nhấn vào gửi.
 
-**12) Hệ điều hành an toàn mạng.**
+**12) Mô đun an toàn mạng.**
 * Cho phép  hoặc cấm các dịch vụ, hoạt động truy cập ra ngoài.
 * Cho phép hoặc cấm các dịch vụ truy cập từ ngoài vào trong.
 * Theo dõi luồng dữ liệu để giữ môi trường Internet và Intranet.
