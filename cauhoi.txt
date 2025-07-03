@@ -1,0 +1,91 @@
+**1) Hãy xác định địa chỉ Vsvc.edu.VN đang hoạt động ở tầng nào trong mô hình OSI (Open System Interconnection). Phân tích tính năng bảo vệ tưởng lửa bảo vệ địa chỉ vsvc.edu.vn?
+* Proxy Server là giải pháp cung cấp sự mở rộng và hiệu quả thông qua truy cập Internet. Thay cho việc gán mỗi máy khách một kết nối Internet trực tiếp trong trường hợp này.
+* Tất cả các kết nối bên trong đều có thể cho qua hoặc nhiều proxy và lần lượt kết nối ra ngoài.
+* Địa chỉ vsvc.edu.vn được bảo mật với proxy server.Vậy địa chỉ này hoạt động ở tầng ứng dụng.
+
+**2) Hãy phân tích nguyên lý hoạt động mạng truyền thông của mạng không dây.**
+* Mạng không dây sử dụng sóng điện từ (vô tuyến và tia hồng ngoại) để truyền thông tin từ điểm này sang điểm khác mà không dựa vào bất cứ kết nối vật lý nào.
+* Các sóng vô tuyến thường là các sóng mang vô tuyến bởi vì chúng thực hiện chức năng phân phát năng lượng đơn giản tới máy thu ở xa.
+* Dữ liệu truyền được chồng lên sóng mang vô tuyến để nó nhận lại ở đúng máy thu. Đó là sự điều biến sóng mang theo thông tin được truyền.
+* Để nhận dữ liệu, máy thu vô tuyến bắt sóng (hoặc chọn) một tần số vô tuyến xác định trong khi loại bỏ các tín hiệu vô tuyến khác trên tần số khác.
+
+**3) Hãy nêu những ưu điểm của hệ điều hành Linux?**
+* Tính tùy biến cao: Dễ dàng thay đổi, tùy biến Linux theo nhu cầu và mục đích của người sử dụng.
+* Tính tương thích cao: Linux có thể chạy trên hầu hết các thiết bị phần cứng từ Intel, IBM... Các trình điều khiển thiết bị (driver) cũng được cộng đồng hỗ trợ phát triển để có thể dùng tốt trên nền tảng Linux.
+* Hiệu suất cao: Linux được tối giản giúp nó nhẹ, không các ứng dụng đi kèm, nhờ vậy mang lại hiệu năng sử dụng cao. Việc cài đặt Linux cũng đòi hỏi cấu hình phần cứng thấp, nhờ vậy các máy tính cũ, cấu hình yếu vẫn có thể chạy tốt trong khi dùng hệ điều hành này.
+* Tính bảo mật cao: Linux ít lỗ hổng hơn so với hệ điều hành khác.
+
+**4) Phân tích sự khác nhau của Domain và Workgroup trong mô hình mạng Client/Server.**
+* **Workgroup:**
+    * Tất cả các máy tính đều tương đương với nhau và không có máy tính nào có quyền kiểm soát máy tính nào.
+    * Trong một nhóm làm việc, mỗi một máy tính duy trì cơ sở dữ liệu riêng của nó.
+* **Domain:**
+    * Quản trị viên mạng dùng một hoặc nhiều máy tính làm máy chủ làm máy chủ và cung cấp tất cả quyền truy cập, quyền bảo mật cho tất cả các máy tính trong mạng.
+    * Domain là một tập hợp các máy tính, trong đó máy tính, máy in và tài khoản người dùng được đăng ký trong cơ sở dữ liệu truy cập.
+
+**5) Hãy nêu quy trình ảo hóa của hệ thống máy tính.**
+* Ảo hóa hệ thống máy chủ cho phép ta có thể chạy nhiều máy ảo trên một máy chủ vật lý, đem lại nhiều lợi ích cũng như tính di động.
+*Dễ thiết lập các máy chủ ảo, giúp việc quản lý, chia tài nguyên tốt hơn, quản lý luồng làm việc với nhu cầu.Tăng hiệu suất làm việc của một máy chủ vật lý.
+*Ảo hóa ứng dụng là một dạng công nghệ ảo hóa khác cho phép chúng ta tách rời mối liên kết giữa ứng dụng và hệ điều hành và cho phép phân phối lại ứng dụng phù hợp với nhu cầu user.
+
+**6) Phân tích lỗi DNS server isn't responding và cách sửa lỗi hệ thống mạng Server.**
+* Lỗi DNS Server isn't responding có nghĩa là DNS của tên miền người dùng truy cập không khả dụng hoặc trình duyệt không thể kết nối Internet.
+* Khắc phục: kiểm tra kết nối mạng với các thiết bị khác, tắt IPv6 và cập nhật trình điều khiển bộ chuyển mạch mạng.
+* Khởi động hệ thống mạng, kiểm tra phân giải DNS
+
+**7)Những lợi ích cảu mạng riêng ảo (VPN).**
+*Access VPN: Cung cấp kết nối cho người dùng di động và telecomuters. Đây là lựa chọn thay thế cho kết nối quay số và kết nối ISPN. Cung cấp các giải pháp chi phí thấp, 1 loạt các kết nối.
+*Intranet VPN: Chúng hữu ích cho việc kết nối các văn phòng từ xa bằng cách sử dụng cơ sở hạ tầng được chia sẻ với chính sách giống như một mạng riêng.
+*Extranet VPN: Sử dụng cơ sở hạ tầng được chia sẻ qua mạng nội bộ, nhà cung cấp, khách hàng và đối tác được kết nối bằng các kết nối chuyên dùng.
+
+**8) Hãy trình bày vai trò của Switch trong mạng viễn thông.**
+* Switch là một trong những thành phần cốt lõi thực hiện việc truyền trong vlan.
+* Chức năng là điểm kết nối các trạm đầu cuối và hoàn chuyển của Switch và cho các cuộc giao tiếp diễn ra trên toàn mạng. Switch cung cấp 1 cơ chế thông minh để nhóm người dùng.
+*Cung cấp các cổng hoặc các địa chỉ luân lý vào các cộng đồng thích hợp
+*Cung cấp 1 cơ chế thông minh để thực hiện các quyết định lọc và chuyển tiếp các khung dựa trên các thước đo của vlan được định nghĩa bởi nhà quản trị
+
+**9) Trình bày công nghệ bảo mật hai lớp trên Windows logon.**
+* Cơ chế của phương pháp xác thực này khi người dùng đăng nhập tên người dùng và mật khẩu chính xác, thì máy chủ SMS gửi về điện thoại đã đăng ký của người dùng, người dùng sẽ phải nhập mã xác thực được gửi về để hoàn tất thủ tục đăng nhập.
+* Phương pháp sử dụng mã xác thực dạng phần mềm thứ 3: Người dùng cài đặt xác thực 2 lớp (có thể sử dụng ứng dụng miễn phí có độ an toàn và ổn định cao như Authy, Google Authenticator, Free OTP...) trên điện thoại thông minh.
+
+**10) Trình bày các thành phần của một hệ thống Web server.**
+*Đường kết nối với mạng cung cấp dịch vụ interner
+* Các máy chủ cung cấp dịch vụ web.
+* Các máy chủ cơ sở dữ liệu, máy chủ chứng thực, máy chủ tìm kiếm.
+*Hệ thống tường lửa (cả phần cứng và phần mền) đảm bảo an toàn cho hệ thống máy chủ kết nối với môi trường  internet
+* Hệ thống máy trạm điều hành, cập nhật thông tin cho máy chủ web,...
+
+**11) Trình bày cấu trúc thư điện tử và cách gửi thư điện tử đính kèm tệp bằng Gmail
+-Cấu trúc: <tên đăng nhập> + @ + <tên máy chủ hộp thư>.
+ *Cách gửi thư điện tử đính kèm tệp:**
+    * **Bước 1:** Hãy mở gmail và nhấn vào soạn thư ở góc trên cùng bên trái giao diện.
+    * **Bước 2:** Hãy nhập địa chỉ Email người nhận.
+    * **Bước 3:** Chọn biểu tượng đính kèm tệp.
+    * **Bước 4:** Chọn file đính kèm trong gmail -> Open.
+    * **Bước 5:** Nhấn vào gửi.
+
+**12) Hệ điều hành an toàn mạng.**
+* Cho phép  hoặc cấm các dịch vụ, hoạt động truy cập ra ngoài.
+* Cho phép hoặc cấm các dịch vụ truy cập từ ngoài vào trong.
+* Theo dõi luồng dữ liệu để giữ môi trường Internet và Intranet.
+* Kiểm soát nội dung thông tin, gói lưu chuyển thông tin trên hệ thống mạng.
+* Lọc các gói tin dựa vào địa chỉ nguồn, địa chỉ đích và số cổng (port) giao thức.
+
+**13) Hãy phân tích cách thức hoạt động của kỹ thuật NAT (Network Address Translation) cho hệ thống mạng máy tính Client/Server.**
+* NAT là có một bảng lưu trữ thông tin về các gói tin được chuyển đi. Khi cài đặt hệ thống NAT server sẽ sẽ được cấu hình sẵn 1 địa chỉ ip công cộng. Khi 1 IP nào đó trong mạng muốn truy cập vào 1 web ở mạng internet
+* NAT sẽ thay đổi địa chỉ gói tin đó thành địa chỉ IP công cộng và gửi đi. Lúc gói tin trở về, NAT sẽ dò tìm trong bảng thông tin xem gói tin đó có tương ứng với IP nào và chuyển đổi IP của các gói tin thành IP của thiết bị trong mạng và chuyển gói tin đến thiết bị đó.
+
+**14) Hãy trình bày cách hoạt động và nhiệm vụ của tường lửa (Firewall) trong hệ thống mạng máy tính.**
+* Tường lửa hoạt động như một rào chắn giữa mạng an toàn và không an toàn. Nó kiểm soát các truy cập đến nguồn lực của mạng thông qua một mô hình kiểm soát chủ động.
+* Cho phép hoặc vô hiệu hoá các dịch vụ truy cập từ bên ngoài, đảm bảo không tin chỉ có trong mạng nội bộ.
+* Cho phép hoặc vô hiệu hoá các dịch vụ bên ngoài truy cập vào trong.
+
+**15) Hãy trình bày chức năng của giao thức thấp cấp điều khiển Internet (ICMP).**
+* **Báo cáo lỗi:** ICMP được sử dụng để báo cáo các lỗi liên quan đến việc truyền datagram IP, chẳng hạn như điểm đến không thể tiếp cận, datagram quá lớn định dạng datagram không hợp lệ.
+* **Chuẩn đoán:** ICMP được sử dụng để chuẩn đoán các vấn đề kết nối mạng, chẳng hạn như xác định xem một thiết bị bị hư hỏng có thể trực tuyến hay không hoặc xác định tuyến đường tốt nhất để gửi datagram IP.
+* **Điều khiển mạng:** ICMP được sử dụng để điều khiển hoạt động của mạng, chẳng hạn như thông báo thay đổi địa chỉ IP của một máy hoặc yêu cầu thiết bị khởi động lại.
+
+**16) Hãy trình bày lợi ích của giao thức thấp cấp điều khiển Internet (ICMP).**
+* **Cải thiện hiệu quả của mạng:** ICMP giúp xác định và khắc phục các vấn đề mạng một cách nhanh chóng, giúp giảm thời gian ngừng hoạt động và cải thiện hiệu quả mạng.
+* **Tăng độ tin cậy mạng:** ICMP giúp đảm bảo rằng các datagram IP được gửi đến đích một cách chính xác và đáng tin cậy.
+* **Giúp cải thiện trải nghiệm mạng:** ICMP giúp xác định và ngăn chặn các vấn đề có thể dẫn đến tắc nghẽn mạng

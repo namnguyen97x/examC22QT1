@@ -11,14 +11,14 @@
 <body>
 
     <div id="main-content" style="display: none;">
-        <div class="container">
+        <div class="container" style="padding-top:0; margin-top:0; min-height:unset;">
             <div id="home-screen" class="home-screen">
                 <h1 class="main-title">🌐 Ôn tập Mạng Máy Tính</h1>
                 <div class="mode-select">
-                    <button class="mode-btn" id="essay-btn" disabled>
+                    <button class="mode-btn" id="essay-btn">
                         <span class="mode-icon">📝</span>
                         <span class="mode-title">Tự luận</span>
-                        <span class="mode-desc">(Sắp ra mắt)</span>
+                        <span class="mode-desc">(Tự luận, ôn tập & làm bài)</span>
                     </button>
                     <button class="mode-btn active" id="quiz-btn">
                         <span class="mode-icon">🧑‍💻</span>
@@ -74,10 +74,13 @@
                 </div>
             </div>
         </div>
+        <!-- Vùng hiển thị cho phần tự luận -->
+        <div id="essay-section" style="display:none;"></div>
     </div>
 
     <script src="questions.js"></script>
     <script src="script.js"></script>
+    <script src="tuluan.js"></script>
 
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
@@ -124,6 +127,18 @@
                     focusConfirm: false,
                     allowOutsideClick: false,
                     allowEscapeKey: false,
+                    didOpen: () => {
+                        // Cho phép nhấn Enter để submit
+                        const popup = Swal.getPopup();
+                        popup.querySelectorAll('input').forEach(input => {
+                            input.addEventListener('keydown', function(e) {
+                                if (e.key === 'Enter') {
+                                    e.preventDefault();
+                                    Swal.clickConfirm();
+                                }
+                            });
+                        });
+                    },
                     preConfirm: () => {
                         const hoTen = Swal.getPopup().querySelector('#hoTen').value;
                         const msv = Swal.getPopup().querySelector('#msv').value.trim();
