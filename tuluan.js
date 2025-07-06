@@ -208,7 +208,7 @@ function onEssaySubmit(e) {
         const answer = essayQuestions[currentEssay].answer;
         const userVal = inputs[0] || '';
         let html = '';
-        if (normalizeString(userVal) === normalizeString(answer)) {
+        if (compareVietnameseStrings(userVal, answer)) {
             html = `<span class="essay-correct">${userVal}</span>`;
         } else {
             html = `<span class="essay-wrong">${userVal||'___'}</span> <span class="essay-correct">[${answer}]</span>`;
@@ -216,7 +216,7 @@ function onEssaySubmit(e) {
         const feedback = essaySection.querySelector('#essay-feedback');
         feedback.style.opacity = 0;
         setTimeout(()=>{
-            feedback.innerHTML = `<div>${normalizeString(userVal) === normalizeString(answer) ? 'Chính xác!' : 'Chưa đúng.'}</div><div>${html}</div>`;
+            feedback.innerHTML = `<div>${compareVietnameseStrings(userVal, answer) ? 'Chính xác!' : 'Chưa đúng.'}</div><div>${html}</div>`;
             feedback.style.opacity = 1;
         }, 120);
         return;
@@ -231,7 +231,7 @@ function onEssaySubmit(e) {
         if (blanks.includes(i)) {
             const userVal = inputs[inputIdx] || '';
             const correctVal = answerWords[i];
-            if (normalizeString(userVal) === normalizeString(correctVal)) {
+            if (compareSingleWord(userVal, correctVal)) {
                 html += `<span class="essay-correct">${userVal}</span> `;
                 correct++;
             } else {
@@ -258,8 +258,73 @@ function normalizeString(str) {
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '')
         .replace(/đ/g, 'd')
+        .replace(/Đ/g, 'd')
         .replace(/\s+/g, ' ')
         .trim();
+}
+
+// Hàm so sánh chuỗi tiếng Việt linh hoạt hơn
+function compareVietnameseStrings(str1, str2) {
+    const normalized1 = normalizeString(str1);
+    const normalized2 = normalizeString(str2);
+    
+    // So sánh trực tiếp
+    if (normalized1 === normalized2) return true;
+    
+    // So sánh từng từ (cho phép thứ tự từ khác nhau)
+    const words1 = normalized1.split(/\s+/).filter(w => w.length > 0);
+    const words2 = normalized2.split(/\s+/).filter(w => w.length > 0);
+    
+    if (words1.length !== words2.length) return false;
+    
+    // Sắp xếp các từ để so sánh
+    const sortedWords1 = words1.sort();
+    const sortedWords2 = words2.sort();
+    
+    return sortedWords1.every((word, index) => word === sortedWords2[index]);
+}
+
+// Hàm so sánh từng từ riêng lẻ (cho chế độ điền từ)
+function compareSingleWord(userWord, correctWord) {
+    const normalizedUser = normalizeString(userWord);
+    const normalizedCorrect = normalizeString(correctWord);
+    
+    // So sánh trực tiếp
+    if (normalizedUser === normalizedCorrect) return true;
+    
+    // Cho phép một số biến thể phổ biến
+    const variations = [
+        normalizedCorrect,
+        normalizedCorrect.replace(/^d/, 'đ'),
+        normalizedCorrect.replace(/^đ/, 'd'),
+        normalizedCorrect.replace(/^D/, 'Đ'),
+        normalizedCorrect.replace(/^Đ/, 'D')
+    ];
+    
+    return variations.includes(normalizedUser);
+}
+
+// Hàm bindMicEvents để xử lý sự kiện input
+function bindMicEvents() {
+    const inputs = document.querySelectorAll('.essay-blank');
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            // Lưu giá trị khi người dùng nhập
+            const blankIndex = this.getAttribute('data-blank');
+            if (!userEssayAnswers[currentEssay]) {
+                userEssayAnswers[currentEssay] = [];
+            }
+            userEssayAnswers[currentEssay][blankIndex] = this.value;
+        });
+        
+        // Cho phép nhấn Enter để submit
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                document.getElementById('essay-form').dispatchEvent(new Event('submit'));
+            }
+        });
+    });
 }
 
 // Sự kiện nút essay
